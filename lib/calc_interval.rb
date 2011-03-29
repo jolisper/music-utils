@@ -1,43 +1,43 @@
-
+# Esta clase representa un intervalo musical
 class Interval
-  attr_accessor :note1, :note2
-end
+  DIATONIC_SCALE = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']
   
-def calc_interv(note1, note2, step)
-  natural_notes = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']
-
-  # inicializa contador e indice de escala
-  i = natural_notes.index(note1)
-  count = 1
-
-  # si es la misma nota se comienza desde la siguiente
-  if note1 == note2
-    count += 1; i += 1
+  def initialize(note1, note2, step)
+    @note1 = note1
+    @note2 = note2
+    @step = step
   end
-  
-  # cuenta las notas
-  while natural_notes[i] != note2
-    i += 1
-    if i > natural_notes.length
-    i = 0; next 
+
+  # Clasifica el intervalo entre 
+  def interval()
+    # inicializa contador e indice de escala
+    i = DIATONIC_SCALE.index(@note1)
+    count = 1
+
+    # si es la misma nota se comienza desde la siguiente
+    if @note1 == @note2
+      count += 1; i += 1
     end
-    count += 1
+  
+    # cuenta las notas
+    while DIATONIC_SCALE[i] != @note2
+      i += 1
+      if i > DIATONIC_SCALE.length
+      i = 0; next 
+      end
+      count += 1
+    end
+    count = count + (8 * @step) - 1 if @step > 0
+    count
   end
-  
-  count = count + (8 * step) - 1 if step > 0
-  
-  count
+
 end
-
+ 
 # TEST: 
-p calc_interv 'do', 'fa', 1
-p calc_interv 'do', 're', 1
-p calc_interv 'do', 'sol', 1
-p calc_interv 'do', 'si', 0
-p calc_interv 'si', 'mi', 0
-p calc_interv 'si', 'la', 0
-p calc_interv 'si', 'si', 0
-
-
-
-
+p Interval.new('do', 'fa', 1).interval
+p Interval.new('do', 're', 1).interval
+p Interval.new('do', 'sol', 1).interval
+p Interval.new('do', 'si', 0).interval
+p Interval.new('si', 'mi', 0).interval
+p Interval.new('si', 'la', 0).interval
+p Interval.new('si', 'si', 0).interval
