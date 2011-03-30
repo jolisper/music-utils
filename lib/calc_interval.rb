@@ -32,12 +32,3 @@ class Interval
   end
 
 end
- 
-# TEST: 
-p Interval.new('do', 'fa', 1).interval
-p Interval.new('do', 're', 1).interval
-p Interval.new('do', 'sol', 1).interval
-p Interval.new('do', 'si', 0).interval
-p Interval.new('si', 'mi', 0).interval
-p Interval.new('si', 'la', 0).interval
-p Interval.new('si', 'si', 0).interval
