@@ -1,4 +1,7 @@
-require 'rake'
+require 'rubygems'
+require 'bundler/setup'
+
+require'rake'
 require 'rake/testtask'
 
 task :default => [:test_units]
