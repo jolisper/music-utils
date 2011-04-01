@@ -4,8 +4,8 @@ GEM
     rake (0.8.7)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
   rake
-
