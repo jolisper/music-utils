@@ -8,8 +8,8 @@ class Interval
     @step = step
   end
 
-  # Clasifica el intervalo entre 
-  def interval()
+  # Clasifica el intervalo diatonico 
+  def diatonic_interval()
     # inicializa contador e indice de escala
     i = DIATONIC_SCALE.index(@note1)
     count = 1
