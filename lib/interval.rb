@@ -9,7 +9,7 @@ class Interval
   end
 
   # Clasifica el intervalo entre 
-  def interval()
+  def diatonic_interval()
     # inicializa contador e indice de escala
     i = DIATONIC_SCALE.index(@note1)
     count = 1
