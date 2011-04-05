@@ -11,7 +11,7 @@ desc "Run all examples"
 RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.ruby_opts = '-I lib'
   spec.pattern = 'spec/**/*_spec.rb'
-  spec.rspec_opts = ['--format nested']
+  spec.rspec_opts = ['--color --format doc']
 end
 
 desc "Run all unit tests"
