@@ -12,7 +12,7 @@ describe Interval do
     i.diatonic_interval.should == 8
   end
 
-  it "diatonic interval compound do-mi should be a 10th" do
+  it "compound diatonic interval do-mi should be a 10th" do
     i = Interval.new('do', 'mi', 1)
     i.diatonic_interval.should == 10
   end
@@ -27,7 +27,7 @@ describe Interval do
     i.cromatic_interval.should == 12
   end
 
-  it "composite chromatic interval do-mi should be 16 semi tones" do
+  it "compound chromatic interval do-mi should be 16 semi tones" do
     i = Interval.new('do', 'mi', 1)
     i.cromatic_interval.should == 16
   end
