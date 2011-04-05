@@ -1,13 +1,15 @@
-Music-Utils
+music-utils
 =========
 
-Utilidades para música en Ruby.
+Utils for music.
 
 Example
 -------
-
-    Interval.new('do', 'mi').interval # => 3
-
+    # in tones
+    Interval.new('do', 'mi', 0).diatonic_interval # => 3
+    
+    # in semi-tones
+    Interval.new('do', 'mi', 0).cromatic_interval # => 4
 
 Copyright
 ---------
