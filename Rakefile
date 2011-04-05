@@ -14,7 +14,7 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.rspec_opts = ['--format nested']
 end
 
-desc "Corriendo tests unitarios"
+desc "Run all unit tests"
 Rake::TestTask.new "test_units"  do |t|
   t.pattern = 'test/*_test.rb'
   t.verbose = true
