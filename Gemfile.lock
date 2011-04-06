@@ -17,5 +17,5 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  rake
-  rspec
+  rake (~> 0.8)
+  rspec (~> 2.5)
