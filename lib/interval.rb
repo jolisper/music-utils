@@ -1,6 +1,11 @@
+# Scales module
+module Scales
+  DIATONIC_SCALE = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']
+end
+
 # Esta clase representa un intervalo musical
 class Interval
-  DIATONIC_SCALE = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']
+  include Scales
 
   def initialize(note1, note2, step)
     @note1 = note1
@@ -52,7 +57,7 @@ class Interval
       if DIATONIC_SCALE[i] == 'mi' or DIATONIC_SCALE[i] == 'si'
         count += 1
       else
-         count += 2
+        count += 2
       end
     end
     
@@ -61,3 +66,5 @@ class Interval
   end
   
 end
+
+
