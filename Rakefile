@@ -15,10 +15,4 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.fail_on_error = false
 end
 
-desc "Run all unit tests"
-Rake::TestTask.new "test_units"  do |t|
-  t.pattern = 'test/*_test.rb'
-  t.verbose = true
-  t.warning = true
-end
 
