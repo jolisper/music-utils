@@ -15,7 +15,7 @@ class Interval
 
   # It classifies the diatonic interval
   def diatonic_interval()
-    # inicializa contador e indice de escala
+    # initialize counter and index of scale
     i = DIATONIC_SCALE.index(@note1)
     count = 1
 
