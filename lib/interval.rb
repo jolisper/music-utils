@@ -3,7 +3,7 @@ module Scales
   DIATONIC_SCALE = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']
 end
 
-# Esta clase representa un intervalo musical
+# This class represents a music interval
 class Interval
   include Scales
 
@@ -13,18 +13,18 @@ class Interval
     @step = step
   end
 
-  # Clasifica el intervalo diatonico 
+  # It classifies the diatonic interval
   def diatonic_interval()
     # inicializa contador e indice de escala
     i = DIATONIC_SCALE.index(@note1)
     count = 1
 
-    # si es la misma nota se comienza desde la siguiente
+    # No unison
     if @note1 == @note2
       count += 1; i += 1
     end
   
-    # cuenta las notas
+    # Counting notes
     while DIATONIC_SCALE[i] != @note2
       i += 1
       if i > DIATONIC_SCALE.length
@@ -36,18 +36,18 @@ class Interval
     count
   end
 
-  # Clasifica el intervalo cromático
+  # Returns the number of semitones
   def cromatic_interval()
     # inicializa contador e indice de escala
     i = DIATONIC_SCALE.index(@note1)
     count = 1
 
-    # si es la misma nota se comienza desde la siguiente
+    # No unison
     if @note1 == @note2
       count += 1; i += 1
     end
   
-    # cuenta las notas
+    # Counting semi-tones
     while DIATONIC_SCALE[i] != @note2
       i += 1
       if i > DIATONIC_SCALE.length
