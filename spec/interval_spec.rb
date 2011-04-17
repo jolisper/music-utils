@@ -39,7 +39,7 @@ describe Interval do
 
   it "class of interval do-mi should be 8J" do
     i = Interval.new('do', 'do', 0)
-    i.interval_class == '8J'
+    i.interval_class.should == '8J'
   end
 
 end
