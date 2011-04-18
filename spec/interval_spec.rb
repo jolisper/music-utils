@@ -32,14 +32,14 @@ describe Interval do
     i.cromatic_interval.should == 16
   end
 
-  it "class of interval do-mi should be 3M" do
+  it "quality of interval do-mi should be M" do
     i = Interval.new('do', 'mi', 0)
-    i.interval_class.should == '3M'
+    i.quality.should == 'M'
   end
 
-  it "class of interval do-mi should be 8J" do
+  it "quality of interval do-mi should be P" do
     i = Interval.new('do', 'do', 0)
-    i.interval_class.should == '8J'
+    i.quality.should == 'P'
   end
 
 end

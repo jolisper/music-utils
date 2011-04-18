@@ -64,7 +64,14 @@ class Interval
     count = count + (12 * @step) if @step > 0
     count
   end
-  
+
+  def quality
+      hash = {
+        3 => {2 => 'd', 3 => 'm', 4 => 'M', 5 => 'A'},
+        8 => {10 => 'dd', 11 => 'd', 12 => 'P', 13 => 'A', 14 => 'AA'}}
+      hash[diatonic_interval][cromatic_interval]
+  end
+
 end
 
 
