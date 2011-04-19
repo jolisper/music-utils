@@ -14,7 +14,7 @@ class Interval
   end
 
   # It classifies the diatonic interval
-  def diatonic_interval()
+  def quantity
     # initialize counter and index of scale
     i = DIATONIC_SCALE.index(@note1)
     count = 1
@@ -37,7 +37,7 @@ class Interval
   end
 
   # Returns the number of semitones
-  def cromatic_interval()
+  def semi_tones
     # inicializa contador e indice de escala
     i = DIATONIC_SCALE.index(@note1)
     count = 1
@@ -69,7 +69,7 @@ class Interval
       hash = {
         3 => {2 => 'd', 3 => 'm', 4 => 'M', 5 => 'A'},
         8 => {10 => 'dd', 11 => 'd', 12 => 'P', 13 => 'A', 14 => 'AA'}}
-      hash[diatonic_interval][cromatic_interval]
+      hash[quantity][semi_tones]
   end
 
 end
