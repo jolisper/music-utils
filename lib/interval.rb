@@ -38,7 +38,7 @@ class Interval
 
   # Returns the number of semitones
   def semi_tones
-    # inicializa contador e indice de escala
+    # initialize counter and index of scale
     i = DIATONIC_SCALE.index(@note1)
     count = 1
 
@@ -64,7 +64,8 @@ class Interval
     count = count + (12 * @step) if @step > 0
     count
   end
-
+  
+  # Returns the quality of the interval
   def quality
       hash = {
         3 => {2 => 'd', 3 => 'm', 4 => 'M', 5 => 'A'},
