@@ -1,6 +1,15 @@
 # Scales module
 module Scales
   DIATONIC_SCALE = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']
+  QUALITIES = {
+        2 => {0 => 'd', 1 => 'm', 2 => 'M', 3 => 'A'},
+        3 => {2 => 'd', 3 => 'm', 4 => 'M', 5 => 'A'},
+        4 => {3 => 'dd', 4 => 'd', 5 => 'P', 6 => 'A', 7 => 'AA'},
+        5 => {5 => 'dd', 6 => 'd', 7 => 'P', 8 => 'A', 9 => 'AA'},
+        6 => {7 => 'd', 8 => 'm', 9 => 'M', 10 => 'A'},
+        7 => {9 => 'd', 10 => 'm', 11 => 'M', 12 => 'A'},
+        8 => {10 => 'dd', 11 => 'd', 12 => 'P', 13 => 'A', 14 => 'AA'}
+      }
 end
 
 # This class represents a music interval
@@ -67,10 +76,7 @@ class Interval
   
   # Returns the quality of the interval
   def quality
-      hash = {
-        3 => {2 => 'd', 3 => 'm', 4 => 'M', 5 => 'A'},
-        8 => {10 => 'dd', 11 => 'd', 12 => 'P', 13 => 'A', 14 => 'AA'}}
-      hash[quantity][semi_tones]
+    QUALITIES[quantity][semi_tones]
   end
 
 end
