@@ -49,7 +49,7 @@ class Interval
   def semi_tones
     # initialize counter and index of scale
     i = DIATONIC_SCALE.index(@note1)
-    count = 1
+    count = 0
 
     # No unison
     if @note1 == @note2
@@ -63,7 +63,8 @@ class Interval
         i = 0; next 
       end
 
-      if DIATONIC_SCALE[i] == 'mi' or DIATONIC_SCALE[i] == 'si'
+      # from 'mi' to 'fa' and 'si' to 'do' there 1 semi-tone
+      if DIATONIC_SCALE[i] == 'fa' or DIATONIC_SCALE[i] == 'do'
         count += 1
       else
         count += 2
