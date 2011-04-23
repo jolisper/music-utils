@@ -9,7 +9,6 @@ Examples
 
 To Do
 -----
-  * Add support to full diatonic scale in quality method  
   * Add support to note alterations
 
 Copyright
