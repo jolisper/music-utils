@@ -37,7 +37,7 @@ describe Interval do
     i.quality.should == 'M'
   end
 
-  it "quality of interval do-mi should be P" do
+  it "quality of interval do-do should be P" do
     i = Interval.new('do', 'do', 0)
     i.quality.should == 'P'
   end
