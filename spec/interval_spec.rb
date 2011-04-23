@@ -32,6 +32,11 @@ describe Interval do
     i.semi_tones.should == 16
   end
 
+  it "quality of interval do-re should be M" do
+    i = Interval.new('do', 're', 0)
+    i.quality.should == 'M'
+  end
+
   it "quality of interval do-mi should be M" do
     i = Interval.new('do', 'mi', 0)
     i.quality.should == 'M'
