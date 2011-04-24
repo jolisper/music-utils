@@ -23,7 +23,7 @@ class Interval
   end
 
   # It classifies the diatonic interval
-  def quantity
+  def number
     # initialize counter and index of scale
     i = DIATONIC_SCALE.index(@note1)
     count = 1
@@ -46,7 +46,7 @@ class Interval
   end
 
   # Returns the number of semitones
-  def semi_tones
+  def semitone
     # initialize counter and index of scale
     i = DIATONIC_SCALE.index(@note1)
     count = 0
@@ -77,9 +77,7 @@ class Interval
   
   # Returns the quality of the interval
   def quality
-    QUALITIES[quantity][semi_tones]
+    QUALITIES[number][semitone]
   end
 
 end
-
-
