@@ -2,41 +2,41 @@ require 'interval'
 
 describe Interval do
   
-  context "Diatonic intervals" do
-    it "simple diatonic interval do-mi should be a 3rd" do
+  context "Number of intervals" do
+    it "the number of simple interval do-mi should be a 3rd" do
       i = Interval.new('do', 'mi', 0)
-      i.quantity.should == 3
+      i.number.should == 3
     end
     
-    it "simple diatonic interval do-do should be an 8th" do
+    it "the number of simple interval do-do should be an 8th" do
       i = Interval.new('do', 'do', 0)
-      i.quantity.should == 8
+      i.number.should == 8
     end
     
-    it "compound diatonic interval do-mi should be a 10th" do
+    it "the number of do-mi compound interval should be a 10th" do
       i = Interval.new('do', 'mi', 1)
-      i.quantity.should == 10
+      i.number.should == 10
     end
   end
   
-  context "Cromatic intervals" do
-    it "simple cromatic interval do-mi should be 4 semi tones" do
+  context "Number of semitones of intervals" do
+    it "simple interval do-mi should be 4 semitones" do
       i = Interval.new('do', 'mi', 0)
-      i.semi_tones.should == 4
+      i.semitone.should == 4
     end
       
-    it "simple cromatic interval do-do should be 12 semi tones" do
+    it "simple interval do-do should be 12 semitones" do
       i = Interval.new('do', 'do', 0)
-      i.semi_tones.should == 12
+      i.semitone.should == 12
     end
     
-    it "compound chromatic interval do-mi should be 16 semi tones" do
+    it "compound interval do-mi should be 16 semitones" do
       i = Interval.new('do', 'mi', 1)
-      i.semi_tones.should == 16
+      i.semitone.should == 16
     end
   end
 
-  context "Quality of intervals" do
+  context "Interval qualities" do
     it "quality of interval do-re should be M" do
       i = Interval.new('do', 're', 0)
       i.quality.should == 'M'
