@@ -1,2 +1,5 @@
 # Redcar project directory #
 .redcar/
+
+# build directory
+pkg/
