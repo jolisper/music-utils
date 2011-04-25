@@ -15,7 +15,8 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.require_path  = 'lib'
   
-  # Development Dependencies
+  # Dependencies
   s.add_development_dependency('rspec')
+  s.required_rubygems_version = ">= 1.3.6"
 
 end
