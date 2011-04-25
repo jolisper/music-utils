@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.description   = "Utils for music"
   s.files         = `git ls-files`.split("\n")
   s.require_path  = 'lib'
+
   #s.rubyforge_project = s.name
   #s.required_rubygems_version = ">= 1.3.6"
 
