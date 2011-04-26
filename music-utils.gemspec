@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   # Basic Info
   s.name          = 'music-utils'
-  s.version       = '0.0.1'
+  s.version       = '0.3.20'
   s.summary       = 'music-utils'
   s.description   = 'Utils for music'
   s.platform      = Gem::Platform::RUBY
