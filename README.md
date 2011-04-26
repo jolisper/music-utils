@@ -10,6 +10,7 @@ Simple intervals:
   * Interval.new('do', 'mi', 0).number    #=> 3 (3th)
   * Interval.new('do', 'mi', 0).semitone  #=> 4 (semi-tones)
   * Interval.new('do', 'mi', 0).quality   #=> M (major)
+  * Interval.new('do#', 'mi', 0).quality   #=> m (major)
 
 Compound intervals:
   
@@ -19,7 +20,7 @@ Compound intervals:
 
 To Do
 -----
-  * Add support to note alterations
+  * Add more rspec examples 
 
 Copyright
 ---------

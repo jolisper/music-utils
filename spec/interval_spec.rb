@@ -52,6 +52,11 @@ describe Interval do
       i.quality.should == 'M'
     end
   
+    it "quality of interval do#-mi should be m" do
+      i = Interval.new('do#', 'mi', 0)
+      i.quality.should == 'm'
+    end
+
     it "quality of interval dob-mi# should be AA" do
       i = Interval.new('dob', 'mi#', 0)
       i.quality.should == 'AA'
