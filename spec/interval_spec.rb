@@ -24,7 +24,12 @@ describe Interval do
       i = Interval.new('do', 'mi', 0)
       i.semitone.should == 4
     end
-      
+
+    it "simple interval dob-mi# should be 6 semitones" do
+      i = Interval.new('dob', 'mi#', 0)
+      i.semitone.should == 6
+    end
+
     it "simple interval do-do should be 12 semitones" do
       i = Interval.new('do', 'do', 0)
       i.semitone.should == 12
@@ -46,7 +51,12 @@ describe Interval do
       i = Interval.new('do', 'mi', 0)
       i.quality.should == 'M'
     end
-    
+  
+    it "quality of interval dob-mi# should be AA" do
+      i = Interval.new('dob', 'mi#', 0)
+      i.quality.should == 'AA'
+    end
+  
     it "quality of interval do-do should be P" do
       i = Interval.new('do', 'do', 0)
       i.quality.should == 'P'

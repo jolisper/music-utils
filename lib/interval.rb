@@ -2,12 +2,12 @@
 module Scales
   DIATONIC_SCALE = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']
   QUALITIES = {
-        2 => {0 => 'd', 1 => 'm', 2 => 'M', 3 => 'A'},
-        3 => {2 => 'd', 3 => 'm', 4 => 'M', 5 => 'A'},
+        2 => {0 => 'd', 1 => 'm', 2 => 'M', 3 => 'A', 4 => 'AA'},
+        3 => {1 => 'dd', 2 => 'd', 3 => 'm', 4 => 'M', 5 => 'A', 6 => 'AA'},
         4 => {3 => 'dd', 4 => 'd', 5 => 'P', 6 => 'A', 7 => 'AA'},
         5 => {5 => 'dd', 6 => 'd', 7 => 'P', 8 => 'A', 9 => 'AA'},
-        6 => {7 => 'd', 8 => 'm', 9 => 'M', 10 => 'A'},
-        7 => {9 => 'd', 10 => 'm', 11 => 'M', 12 => 'A'},
+        6 => {6 => 'dd', 7 => 'd', 8 => 'm', 9 => 'M', 10 => 'A', 11 => 'AA'},
+        7 => {8 => 'dd', 9 => 'd', 10 => 'm', 11 => 'M', 12 => 'A', 13 => 'AA'},
         8 => {10 => 'dd', 11 => 'd', 12 => 'P', 13 => 'A', 14 => 'AA'}
       }
 end
@@ -25,16 +25,16 @@ class Interval
   # It classifies the diatonic interval
   def number
     # initialize counter and index of scale
-    i = DIATONIC_SCALE.index(@note1)
+    i = DIATONIC_SCALE.index(@note1[0..1])
     count = 1
 
     # No unison
-    if @note1 == @note2
+    if @note1[0..1] == @note2[0..1]
       count += 1; i += 1
     end
   
     # Counting notes
-    while DIATONIC_SCALE[i] != @note2
+    while DIATONIC_SCALE[i] != @note2[0..1]
       i += 1
       if i > DIATONIC_SCALE.length
         i = 0; next 
@@ -48,16 +48,16 @@ class Interval
   # Returns the number of semitones
   def semitone
     # initialize counter and index of scale
-    i = DIATONIC_SCALE.index(@note1)
+    i = DIATONIC_SCALE.index(@note1[0..1])
     count = 0
 
     # No unison
-    if @note1 == @note2
+    if @note1[0..1] == @note2[0..1]
       count += 1; i += 1
     end
   
     # Counting semi-tones
-    while DIATONIC_SCALE[i] != @note2
+    while DIATONIC_SCALE[i] != @note2[0..1]
       i += 1
       if i > DIATONIC_SCALE.length
         i = 0; next 
@@ -72,6 +72,22 @@ class Interval
     end
     
     count = count + (12 * @step) if @step > 0
+    
+    # Counting notes alterations
+    alter = @note1[2..3]
+    
+    alter.each_char do |c|
+      count += 1 if c == 'b'
+      count -= 1 if c == '#'
+    end
+
+    alter = @note2[2..3]
+
+    alter.each_char do |c|
+      count -= 1 if c == 'b'
+      count += 1 if c == '#'
+    end
+
     count
   end
   
