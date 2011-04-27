@@ -93,7 +93,9 @@ class Interval
   
   # Returns the quality of the interval
   def quality
-    QUALITIES[number][semitone]
+    s = ( @step > 0 and semitone - (12 * @step) ) || semitone
+    n = ( @step > 0 and number - (7 * @step) ) || number
+    QUALITIES[n][s]
   end
 
   # Returns the class interval in the short notation

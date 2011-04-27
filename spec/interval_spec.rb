@@ -57,15 +57,26 @@ describe Interval do
       i.quality.should == 'm'
     end
 
-    it "quality of interval dob-mi# should be AA" do
-      i = Interval.new('dob', 'mi#', 0)
-      i.quality.should == 'AA'
+    it "quality of interval do#-mi should be m" do
+      i = Interval.new('do#', 'mi', 0)
+      i.quality.should == 'm'
     end
-  
+
     it "quality of interval do-do should be P" do
       i = Interval.new('do', 'do', 0)
       i.quality.should == 'P'
     end
+
+    it "quality of compound interval dob-mi# should be AA" do
+      i = Interval.new('dob', 'mi#', 1)
+      i.quality.should == 'AA'
+    end
+  
+    it "quality of compound interval do-mi should be M" do
+      i = Interval.new('do', 'mi', 1)
+      i.quality.should == 'M'
+    end
+
   end
   
   context "Short Notation" do
@@ -74,10 +85,21 @@ describe Interval do
       i.short.should == 'M2'
     end
 
-    it "the short notation of do-re interval should be m3" do
+    it "the short notation of do-re compound interval should be M9" do
+      i = Interval.new('do', 're', 1)
+      i.short.should == 'M9'
+    end
+
+    it "the short notation of do#-mi interval should be m3" do
       i = Interval.new('do#', 'mi', 0)
       i.short.should == 'm3'
     end
+  
+    it "the short notation of do#-mi compound interval should be m10" do
+      i = Interval.new('do#', 'mi', 1)
+      i.short.should == 'm10'
+    end
+
   end
 end
 

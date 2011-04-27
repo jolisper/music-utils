@@ -2,9 +2,9 @@
 Gem::Specification.new do |s|
   # Basic Info
   s.name          = 'music-utils'
-  s.version       = '0.5.0'
+  s.version       = '0.5.1'
   s.summary       = 'music-utils'
-  s.description   = 'Utils for music'
+  s.description   = 'Utils for music. At the moment only one class to classify intervals.'
   s.platform      = Gem::Platform::RUBY
   s.authors       = ['Jorge Luis Pérez']
   s.email         = ['jorgeluis700@gmail.com']
