@@ -20,6 +20,7 @@ Compound intervals:
   * Interval.new('dob', 'mi#', 1).quality #=> AA (augmented plus)
 
 Short Notation:
+
   * Interval.new('do', 're', 0).short     #=> M2
   * Interval.new('do', 're', 1).short     #=> M9
   * Interval.new('do#', 'mi', 0).short    #=> m3
