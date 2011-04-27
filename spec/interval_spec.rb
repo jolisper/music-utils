@@ -67,5 +67,17 @@ describe Interval do
       i.quality.should == 'P'
     end
   end
+  
+  context "Short Notation" do
+    it "the short notation of do-re interval should be M2" do
+      i = Interval.new('do', 're', 0)
+      i.short.should == 'M2'
+    end
+
+    it "the short notation of do-re interval should be m3" do
+      i = Interval.new('do#', 'mi', 0)
+      i.short.should == 'm3'
+    end
+  end
 end
 

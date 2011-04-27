@@ -96,4 +96,9 @@ class Interval
     QUALITIES[number][semitone]
   end
 
+  # Returns the class interval in the short notation
+  def short
+    quality + number.to_s 
+  end
+ 
 end
