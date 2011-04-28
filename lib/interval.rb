@@ -105,7 +105,6 @@ class Interval
       end
       yield i
     end
-
- end
+  end
  
 end
