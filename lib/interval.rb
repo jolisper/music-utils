@@ -34,13 +34,8 @@ class Interval
     end
   
     # Counting notes
-    while DIATONIC_SCALE[i] != @note2[0..1]
-      i += 1
-      if i > DIATONIC_SCALE.length
-        i = 0; next 
-      end
-      count += 1
-    end
+    until_find_note2(i) { count += 1 }
+
     count = count + (8 * @step) - 1 if @step > 0
     count
   end
@@ -57,12 +52,7 @@ class Interval
     end
   
     # Counting semi-tones
-    while DIATONIC_SCALE[i] != @note2[0..1]
-      i += 1
-      if i > DIATONIC_SCALE.length
-        i = 0; next 
-      end
-
+    until_find_note2(i) do |i|
       # from 'mi' to 'fa' and 'si' to 'do' there 1 semi-tone
       if DIATONIC_SCALE[i] == 'fa' or DIATONIC_SCALE[i] == 'do'
         count += 1
@@ -102,5 +92,20 @@ class Interval
   def short
     quality + number.to_s 
   end
+
+  private
+
+  # Common loop to search note2 
+  def until_find_note2(i)
+    # search note2
+    while DIATONIC_SCALE[i] != @note2[0..1]
+      i += 1
+      if i > DIATONIC_SCALE.length
+        i = 0; next 
+      end
+      yield i
+    end
+
+ end
  
 end
