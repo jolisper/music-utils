@@ -25,14 +25,11 @@ class Interval
   # It classifies the diatonic interval
   def number
     # initialize counter and index of scale
-    i = DIATONIC_SCALE.index(@note1[0..1])
+    i = note1_index
     count = 1
 
-    # No unison
-    if @note1[0..1] == @note2[0..1]
-      count += 1; i += 1
-    end
-  
+    count, i = no_unison(count, i)
+
     # Counting notes
     until_find_note2(i) { count += 1 }
 
@@ -43,15 +40,12 @@ class Interval
   # Returns the number of semitones
   def semitone
     # initialize counter and index of scale
-    i = DIATONIC_SCALE.index(@note1[0..1])
+    i = note1_index 
     count = 0
 
-    # No unison
-    if @note1[0..1] == @note2[0..1]
-      count += 1; i += 1
-    end
-  
-    # Counting semi-tones
+    count, i = no_unison(count, i)
+    
+    # counting semi-tones
     until_find_note2(i) do |i|
       # from 'mi' to 'fa' and 'si' to 'do' there 1 semi-tone
       if DIATONIC_SCALE[i] == 'fa' or DIATONIC_SCALE[i] == 'do'
@@ -63,7 +57,7 @@ class Interval
     
     count = count + (12 * @step) if @step > 0
     
-    # Counting notes alterations
+    # counting notes alterations
     alter = @note1[2..3]
     
     alter.each_char do |c|
@@ -95,7 +89,7 @@ class Interval
 
   private
 
-  # Common loop to search note2 
+  # Common loop to search note 2 
   def until_find_note2(i)
     # search note2
     while DIATONIC_SCALE[i] != @note2[0..1]
@@ -105,6 +99,19 @@ class Interval
       end
       yield i
     end
+  end
+  
+  # Jumps to the next note if note 1 and note 2 are the same
+  def no_unison(count, i)   
+    if @note1[0..1] == @note2[0..1]
+      count += 1; i += 1
+    end
+    [count, i]
+  end
+  
+  # Returns index of note 1
+  def note1_index
+    DIATONIC_SCALE.index(@note1[0..1])
   end
  
 end
