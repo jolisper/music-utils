@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   # Basic Info
   s.name          = 'music-utils'
-  s.version       = '0.5.1'
+  s.version       = '0.5.2'
   s.summary       = 'music-utils'
   s.description   = 'Utils for music. At the moment only one class to classify intervals.'
   s.platform      = Gem::Platform::RUBY
