@@ -1,3 +1,10 @@
+## 0.5.2 (April 27, 2011)
+
+Features:
+
+  - Fixed compound intervals quality error
+
+
 ## 0.5.1 (April 27, 2011)
 
 Features:
