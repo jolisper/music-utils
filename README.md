@@ -26,7 +26,7 @@ Short Notation:
   * Interval.new('do#', 'mi', 0).short    #=> m3
   * Interval.new('do#', 'mi', 1).short    #=> m10
 
-Instalation
+Installation
 -----------
 
     gem install music-utils
