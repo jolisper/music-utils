@@ -2,7 +2,7 @@
 
 Features:
 
-  - Fixed compound intervals quality error
+  - Extracted some common logic into helper methods
 
 
 ## 0.5.1 (April 27, 2011)
