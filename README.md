@@ -26,6 +26,12 @@ Short Notation:
   * Interval.new('do#', 'mi', 0).short    #=> m3
   * Interval.new('do#', 'mi', 1).short    #=> m10
 
+Instalation
+-----------
+
+  gem install music-utils
+
+
 To Do
 -----
   * Add more rspec examples
