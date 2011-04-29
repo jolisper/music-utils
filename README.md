@@ -29,7 +29,7 @@ Short Notation:
 Instalation
 -----------
 
-  gem install music-utils
+        gem install music-utils
 
 
 To Do
