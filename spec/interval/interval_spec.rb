@@ -22,22 +22,22 @@ describe  MusicUtils::Interval do
   context "Number of semitones of intervals" do
     it "simple interval do-mi should be 4 semitones" do
       i = MusicUtils::Interval.new('do', 'mi', 0)
-      i.semitone.should == 4
+      i.semitones.should == 4
     end
 
     it "simple interval dob-mi# should be 6 semitones" do
       i = MusicUtils::Interval.new('dob', 'mi#', 0)
-      i.semitone.should == 6
+      i.semitones.should == 6
     end
 
     it "simple interval do-do should be 12 semitones" do
       i = MusicUtils::Interval.new('do', 'do', 0)
-      i.semitone.should == 12
+      i.semitones.should == 12
     end
     
     it "compound interval do-mi should be 16 semitones" do
       i = MusicUtils::Interval.new('do', 'mi', 1)
-      i.semitone.should == 16
+      i.semitones.should == 16
     end
   end
 
