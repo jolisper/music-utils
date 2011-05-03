@@ -1,4 +1,4 @@
-require 'scales/scales'
+require 'music-utils/scales/scales'
 
 # This class represents a music interval
 module MusicUtils

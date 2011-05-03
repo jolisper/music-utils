@@ -1,4 +1,4 @@
-require './lib/music-utils'
+require './lib/music-utils/version'
 
 Gem::Specification.new do |s|
   # Basic Info
