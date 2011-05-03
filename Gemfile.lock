@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    music-utils (0.5.2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -17,5 +22,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  rake (~> 0.8)
-  rspec (~> 2.5)
+  music-utils!
+  rake (>= 0.8)
+  rspec

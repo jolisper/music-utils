@@ -28,7 +28,7 @@ module MusicUtils
     end
   
     # Returns the number of semitones
-    def semitone
+    def semitones
       # initialize counter and index of scale
       i = note1_index 
       count = 0
@@ -67,7 +67,7 @@ module MusicUtils
     
     # Returns the quality of the interval
     def quality
-      s = ( @step > 0 and semitone - (12 * @step) ) || semitone
+      s = ( @step > 0 and semitones - (12 * @step) ) || semitones
       n = ( @step > 0 and number - (7 * @step) ) || number
       QUALITIES[n][s]
     end
