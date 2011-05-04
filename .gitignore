@@ -3,3 +3,6 @@
 
 # build directory
 pkg/
+
+# Gems
+Gemfile.lock
