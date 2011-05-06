@@ -1,36 +1,35 @@
 music-utils
 =========
 
-Utils for music. At the moment only one class to classify intervals.
+Utils for music. At the moment only to classify interval.
 
 Examples
 --------
 Simple intervals:
   
-  * Interval.new('do', 'mi', 0).number    #=> 3 (3th)
-  * Interval.new('do', 'mi', 0).semitone  #=> 4 (semi-tones)
-  * Interval.new('do', 'mi', 0).quality   #=> M (major)
-  * Interval.new('do#', 'mi', 0).quality  #=> m (minor)
+  * MusicUtils.number('do', 'mi')         #=> 3 (3th)
+  * MusicUtils.semitones('do', 'mi')      #=> 4 (semi-tones)
+  * MusicUtils.quality('do', 'mi')        #=> M (major)
+  * MusicUtils.quality('do#', 'mi')       #=> m (minor)
 
 Compound intervals:
   
-  * Interval.new('do', 'mi', 1).number    #=> 10 (10th)
-  * Interval.new('do', 'mi', 1).semitone  #=> 16 (semi-tones)
-  * Interval.new('do', 'mi', 1).quality   #=> M (major)
-  * Interval.new('dob', 'mi#', 1).quality #=> AA (augmented plus)
+  * MusicUtils.number('do', 'mi', 1)      #=> 10 (10th)
+  * MusicUtils.semitones('do', 'mi', 1)   #=> 16 (semi-tones)
+  * MusicUtils.quality('do', 'mi', 1)     #=> M (major)
+  * MusicUtils.quality('dob', 'mi#', 1)   #=> AA (augmented plus)
 
 Short Notation:
 
-  * Interval.new('do', 're', 0).short     #=> M2
-  * Interval.new('do', 're', 1).short     #=> M9
-  * Interval.new('do#', 'mi', 0).short    #=> m3
-  * Interval.new('do#', 'mi', 1).short    #=> m10
+  * MusicUtils.short('do', 're')          #=> M2
+  * MusicUtils.short('do', 're', 1)       #=> M9
+  * MusicUtils.short('do#', 'mi')         #=> m3
+  * MusicUtils.short('do#', 'mi', 1)      #=> m10
 
 Installation
 -----------
 
     gem install music-utils
-
 
 To Do
 -----

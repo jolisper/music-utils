@@ -1,3 +1,11 @@
+## 1.0.0 (May 6, 2011)
+
+Features:
+
+  - Added MusicUtils module
+  - New shortcuts for clasify intervals on MusicUtils module
+
+
 ## 0.5.2 (April 29, 2011)
 
 Features:
