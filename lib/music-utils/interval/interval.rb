@@ -7,8 +7,10 @@ module MusicUtils
     include Scales
   
     def initialize(note1, note2, step)
-      @note1 = note1
-      @note2 = note2
+      @note1 = note1[0..1].to_sym
+      @note1_alt = note1[2..3]
+      @note2 = note2[0..1].to_sym
+      @note2_alt = note2[2..3]
       @step = step
     end
   
@@ -36,9 +38,9 @@ module MusicUtils
       count, i = no_unison(count, i)
       
       # counting semi-tones
-      until_find_note2(i) do |i|
+      until_find_note2(i) do |ii|
         # from 'mi' to 'fa' and 'si' to 'do' there 1 semi-tone
-        if DIATONIC_SCALE[i] == 'fa' or DIATONIC_SCALE[i] == 'do'
+        if DIATONIC_SCALE[ii] == Scales::FA or DIATONIC_SCALE[ii] == Scales::DO
           count += 1
         else
           count += 2
@@ -48,19 +50,15 @@ module MusicUtils
       count = count + (12 * @step) if @step > 0
       
       # counting notes alterations
-      alter = @note1[2..3]
-      
-      alter.each_char do |c|
-        count += 1 if c == 'b'
-        count -= 1 if c == '#'
-      end
+      count += 1 if @note1_alt == Scales::FLAT
+      coutn += 2 if @note1_alt == Scales::DFLAT
+      count -= 1 if @note1_alt == Scales::SHARP
+      count -= 1 if @note1_alt == Scales::DSHARP
   
-      alter = @note2[2..3]
-  
-      alter.each_char do |c|
-        count -= 1 if c == 'b'
-        count += 1 if c == '#'
-      end
+      count -= 1 if @note2_alt == Scales::FLAT
+      count -= 2 if @note2_alt == Scales::DFLAT
+      count += 1 if @note2_alt == Scales::SHARP
+      count -= 2 if @note2_alt == Scales::DSHARP
   
       count
     end
@@ -82,7 +80,7 @@ module MusicUtils
     # Common loop to search note 2 
     def until_find_note2(i)
       # search note2
-      while DIATONIC_SCALE[i] != @note2[0..1]
+      while DIATONIC_SCALE[i] != @note2
         i += 1
         if i > DIATONIC_SCALE.length
           i = 0; next 
@@ -93,7 +91,7 @@ module MusicUtils
     
     # Jumps to the next note if note 1 and note 2 are the same
     def no_unison(count, i)   
-      if @note1[0..1] == @note2[0..1]
+      if @note1 == @note2
         count += 1; i += 1
       end
       [count, i]
@@ -101,7 +99,7 @@ module MusicUtils
     
     # Returns index of note 1
     def note1_index
-      DIATONIC_SCALE.index(@note1[0..1])
+      DIATONIC_SCALE.index(@note1)
     end
   
   end

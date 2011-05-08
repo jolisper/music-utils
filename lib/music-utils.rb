@@ -1,7 +1,9 @@
 require 'music-utils/interval/interval'
+require 'music-utils/scales/scales'
 
 # Music utils 
 module MusicUtils
+  include Scales
   
   # Returns the number of the interval
   def MusicUtils.number(note1, note2, step = 0)
