@@ -1,3 +1,11 @@
+## 1.0.1 (May 6, 2011)
+
+Features:
+
+  - Added benchmarks to project
+  - Performance increased about 30 percent to classify intervals
+
+
 ## 1.0.0 (May 6, 2011)
 
 Features:
