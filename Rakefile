@@ -12,6 +12,13 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.fail_on_error = false
 end
 
+desc "Run benchmarks"
+task :bench do
+  Dir["benchmark/**/*_bm.rb"].each do |f|
+    eval(File.read(f))
+  end
+end
+
 # Gems tasks
 require "bundler"
 Bundler::GemHelper.install_tasks
