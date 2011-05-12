@@ -2,21 +2,57 @@
 module Scales
   
   # Notes
-  DO = :do
-  RE = :re
-  MI = :mi
-  FA = :fa
+  DO  = :do
+  RE  = :re
+  MI  = :mi
+  FA  = :fa
   SOL = :sol
-  LA = :la
-  SI = :si
+  LA  = :la
+  SI  = :si
   
   DIATONIC_SCALE = [DO, RE, MI, FA, SOL, LA, SI]
 
   # Alterations:
-  FLAT = 'b'
-  DFLAT = FLAT + FLAT
-  SHARP = '#'
-  DSHARP = SHARP + SHARP
+  FLAT    = 'b'
+  DFLAT   = FLAT + FLAT
+  SHARP   = '#'
+  DSHARP  = SHARP + SHARP
+
+  # Altered notes
+  DOF   = DO.to_s + FLAT
+  DOFF  = DO.to_s + DFLAT
+  DOS   = DO.to_s + SHARP
+  DOSS  = DO.to_s + DSHARP
+  
+  REF   = RE.to_s + FLAT
+  REFF  = RE.to_s + DFLAT
+  RES   = RE.to_s + SHARP
+  RESS  = RE.to_s + DSHARP
+  
+  MIF   = MI.to_s + FLAT
+  MIFF  = MI.to_s + DFLAT
+  MIS   = MI.to_s + SHARP
+  MISS  = MI.to_s + DSHARP
+  
+  FAF   = FA.to_s + FLAT
+  FAFF  = FA.to_s + DFLAT
+  FAS   = FA.to_s + SHARP
+  FASS  = FA.to_s + DSHARP
+  
+  SOLF   = SOL.to_s + FLAT
+  SOLFF  = SOL.to_s + DFLAT
+  SOLS   = SOL.to_s + SHARP
+  SOLSS  = SOL.to_s + DSHARP
+
+  LAF   = LA.to_s + FLAT
+  LAFF  = LA.to_s + DFLAT
+  LAS   = LA.to_s + SHARP
+  LASS  = LA.to_s + DSHARP
+
+  SIF   = SI.to_s + FLAT
+  SIFF  = SI.to_s + DFLAT
+  SIS   = SI.to_s + SHARP
+  SISS  = SI.to_s + DSHARP
 
   # Qualities
   PERF = 'P'

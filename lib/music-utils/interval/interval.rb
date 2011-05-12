@@ -7,10 +7,21 @@ module MusicUtils
     include Scales
   
     def initialize(note1, note2, step)
-      @note1 = note1[0..1].to_sym
-      @note1_alt = note1[2..3]
-      @note2 = note2[0..1].to_sym
-      @note2_alt = note2[2..3]
+      
+      # SOL is the only note of length = 3
+      n = 0
+      n += 1 if note1[0..2].to_sym == SOL
+
+      @note1 = note1[0..1 + n].to_sym 
+      @note1_alt = note1[2 + n..3 + n]
+  
+      # SOL is the only note of length = 3
+      n = 0
+      n += 1 if note2[0..2].to_sym == SOL
+
+      @note2 = note2[0..1 + n].to_sym
+      @note2_alt = note2[2 + n..3 + n]
+      
       @step = step
     end
   
