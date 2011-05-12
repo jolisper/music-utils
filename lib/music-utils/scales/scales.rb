@@ -33,7 +33,7 @@ module Scales
         3 => {1 => DIMP, 2 => DIM, 3 => MIN, 4 => MAJ, 5 => AUG, 6 => AUGP},
         4 => {3 => DIMP, 4 => DIM, 5 => PERF, 6 => AUG, 7 => AUGP},
         5 => {5 => DIMP, 6 => DIM, 7 => PERF, 8 => AUG, 9 => AUGP},
-        6 => {6 => DIMP, 7 => DIM, 8 => MIN, 9 => MAJ, 10 => AUG, 11 => AUGP},
+        6 => {7 => DIMP, 8 => DIM, 9 => MIN, 10 => MAJ, 11 => AUG, 12 => AUGP},
         7 => {8 => DIMP, 9 => DIM, 10 => MIN, 11 => MAJ, 12 => AUG, 13 => AUGP},
         8 => {10 => DIMP, 11 => DIM, 12 => PERF, 13 => AUG, 14 => AUGP}
       }
