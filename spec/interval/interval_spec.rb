@@ -101,6 +101,11 @@ describe  MusicUtils::Interval do
       i.short.should == 'm10'
     end
 
+    it "the short notation of do-sol interval should be P5" do
+      i = Interval.new('do', 'sol', 0)
+      i.short.should == 'P5'
+    end
+
   end
 end
 
