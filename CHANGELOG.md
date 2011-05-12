@@ -1,3 +1,10 @@
+## 1.0.2 (May 12, 2011)
+
+Features:
+
+  - Fixed do-sol bug
+  
+
 ## 1.0.1 (May 6, 2011)
 
 Features:
