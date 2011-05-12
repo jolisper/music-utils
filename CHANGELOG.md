@@ -3,6 +3,7 @@
 Features:
 
   - Fixed do-sol bug
+  - Fixed bug on 6th number quality
   
 
 ## 1.0.1 (May 6, 2011)
