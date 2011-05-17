@@ -1,30 +1,17 @@
 require 'music-utils/scales/scales'
 
-# This class represents a music interval
 module MusicUtils
   
+  # This class represents a music interval
   class Interval
     include Scales
   
     def initialize(note1, note2, step)
-      
-      # SOL is the only note of length = 3
-      n = 0
-      n += 1 if note1[0..2].to_sym == SOL
-
-      @note1 = note1[0..1 + n].to_sym 
-      @note1_alt = note1[2 + n..3 + n]
-  
-      # SOL is the only note of length = 3
-      n = 0
-      n += 1 if note2[0..2].to_sym == SOL
-
-      @note2 = note2[0..1 + n].to_sym
-      @note2_alt = note2[2 + n..3 + n]
-      
+      @note1, @note1_alt = Interval.parse(note1)
+      @note2, @note2_alt = Interval.parse(note2)
       @step = step
     end
-  
+    
     # It classifies the diatonic interval
     def number
       # initialize counter and index of scale
@@ -61,16 +48,20 @@ module MusicUtils
       count = count + (12 * @step) if @step > 0
       
       # counting notes alterations
-      count += 1 if @note1_alt == Scales::FLAT
-      coutn += 2 if @note1_alt == Scales::DFLAT
-      count -= 1 if @note1_alt == Scales::SHARP
-      count -= 1 if @note1_alt == Scales::DSHARP
-  
-      count -= 1 if @note2_alt == Scales::FLAT
-      count -= 2 if @note2_alt == Scales::DFLAT
-      count += 1 if @note2_alt == Scales::SHARP
-      count -= 2 if @note2_alt == Scales::DSHARP
-  
+      case @note1_alt
+        when Scales::FLAT   ; count += 1
+        when Scales::SHARP  ; count -= 1
+        when Scales::DFLAT  ; count += 2
+        when Scales::DSHARP ; count -= 2
+      end
+
+      case @note2_alt
+        when Scales::FLAT   ; count -= 1
+        when Scales::SHARP  ; count += 1
+        when Scales::DFLAT  ; count -= 2
+        when Scales::DSHARP ; count += 2
+      end
+
       count
     end
     
@@ -85,15 +76,29 @@ module MusicUtils
     def short
       quality + number.to_s 
     end
+
+    # Parse notes to obtaining the raw note and its alterations separately
+    def Interval.parse(note)
+      n = 0
+  
+      # SOL is the only note of length = 3
+      n += 1 if note[0..2].to_sym == SOL
+      
+      note_aux = note[0..1 + n].to_sym
+      note_alt = note[2 + n..3 + n]
+    
+      [note_aux, note_alt]
+    end      
   
     private
   
     # Common loop to search note 2 
     def until_find_note2(i)
+      length = DIATONIC_SCALE.length
       # search note2
       while DIATONIC_SCALE[i] != @note2
         i += 1
-        if i > DIATONIC_SCALE.length
+        if i > length
           i = 0; next 
         end
         yield i
@@ -112,7 +117,7 @@ module MusicUtils
     def note1_index
       DIATONIC_SCALE.index(@note1)
     end
-  
+    
   end
   
 end
