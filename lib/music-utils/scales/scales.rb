@@ -56,7 +56,7 @@ module Scales
   SIS   = SI.to_s + SHARP
   SISS  = SI.to_s + DSHARP
 
-  CROMATIC_SCALE = [[SIS, DO], [DOS, REF], [DOSS, RE], [RES, MIF], [RESS, MI], [MIS, FA], [FAS, SOLF], [FASS, SOL], [SOLS, LAF], [SOLSS, LA], [LAS, SIF], [SI, DOF]]
+  CROMATIC_SCALE = [[SIS, DO], [DOS, REF], [DOSS, RE], [RES, MIF], [RESS, MI], [MIS, FA], [MISS, FAS, SOLF], [FASS, SOL], [SOLS, LAF], [SOLSS, LA], [LAS, SIF], [SI, DOF]]
   MAJ_SCALE = [2, 2, 1, 2, 2, 2, 1]
   
   # Qualities

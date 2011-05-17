@@ -181,7 +181,7 @@ describe MusicUtils do
           scale(MIS, MAJ_SCALE).should == [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS, MIS]
         end
         it "the major scale of MI# should be [FAS, SOLS, LAS, SI, DOS, RES, MISS, FAS]" do
-          scale(FAS, MAJ_SCALE).should == [FAS, SOLS, LAS, SI, DOS, RES, MISS, FAS]
+          scale(FAS, MAJ_SCALE).should == [FAS, SOLS, LAS, SI, DOS, RES, MIS, FAS]
         end
       end
       context "Flated notes" do
