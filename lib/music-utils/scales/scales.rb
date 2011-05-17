@@ -1,3 +1,5 @@
+require 'music-utils/interval/interval'
+
 # Scales module
 module Scales
   
@@ -11,7 +13,7 @@ module Scales
   SI  = :si
   
   DIATONIC_SCALE = [DO, RE, MI, FA, SOL, LA, SI]
-
+  
   # Alterations:
   FLAT    = 'b'
   DFLAT   = FLAT + FLAT
@@ -39,10 +41,10 @@ module Scales
   FAS   = FA.to_s + SHARP
   FASS  = FA.to_s + DSHARP
   
-  SOLF   = SOL.to_s + FLAT
-  SOLFF  = SOL.to_s + DFLAT
-  SOLS   = SOL.to_s + SHARP
-  SOLSS  = SOL.to_s + DSHARP
+  SOLF  = SOL.to_s + FLAT
+  SOLFF = SOL.to_s + DFLAT
+  SOLS  = SOL.to_s + SHARP
+  SOLSS = SOL.to_s + DSHARP
 
   LAF   = LA.to_s + FLAT
   LAFF  = LA.to_s + DFLAT
@@ -54,6 +56,9 @@ module Scales
   SIS   = SI.to_s + SHARP
   SISS  = SI.to_s + DSHARP
 
+  CROMATIC_SCALE = [[SIS, DO], [DOS, REF], [DOSS, RE], [RES, MIF], MI, [MIS, FA], [FAS, SOLF], [FASS, SOL], [SOLS, LAF], LA, [LAS, SIF], [SI, DOF]]
+  MAJ_SCALE = [2, 2, 1, 2, 2, 2, 1]
+  
   # Qualities
   PERF = 'P'
   MAJ = 'M'
@@ -73,5 +78,57 @@ module Scales
         7 => {8 => DIMP, 9 => DIM, 10 => MIN, 11 => MAJ, 12 => AUG, 13 => AUGP},
         8 => {10 => DIMP, 11 => DIM, 12 => PERF, 13 => AUG, 14 => AUGP}
       }
+      
+  def scale(from, scale_struct)
+    i = 0
+    find_it = false
+    CROMATIC_SCALE.each do |e|
+      if e.is_a?(Array)
+        e.each do |ee|
+          find_it = true if from == ee
+        end
+      else
+        find_it = true if from == e
+      end
+      break if find_it
+      i += 1
+    end
+    
+    scale = []
+    scale << from
+
+    #from_note, from_alter = MusicUtils::Interval.parse(from)
+    
+    shift = 0
+    length = CROMATIC_SCALE.length
+
+    scale_struct.each do |shift|
+      #print 'i: ' + i.to_s, ', shift: ' + shift.to_s, ', sum: ' + (i + shift).to_s
+      #puts
+
+      if i + shift > length - 1
+        i = (i + shift) - (length)
+        shift = 0
+      end
+
+      if CROMATIC_SCALE[i + shift].is_a?(Array)
+        CROMATIC_SCALE[i + shift].each do |e|
+          e_note, e_alter = MusicUtils::Interval.parse(e)
+          last_note, last_alter = MusicUtils::Interval.parse(scale.last)
+          
+          if e_note != last_note
+            scale << e
+            break
+          end 
+        end
+      else
+        scale << CROMATIC_SCALE[i + shift]
+      end
+
+      i += shift
+    end
+
+    scale
+  end
 
 end
