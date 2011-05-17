@@ -166,7 +166,7 @@ describe MusicUtils do
         it "the major scale of LA should be [LA, SI, DOS, RE, MI, FAS, SOLS, LA]" do
           scale(LA, MAJ_SCALE).should == [LA, SI, DOS, RE, MI, FAS, SOLS, LA]
         end
-        it "the major scale of LA should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
+        it "the major scale of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
           scale(SI, MAJ_SCALE).should == [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]
         end
       end
@@ -176,6 +176,12 @@ describe MusicUtils do
         end
         it "the major scale of RE# should be [RES, MIS, FASS, SOLS, LAS, SIS, DOSS, RES]" do
           scale(RES, MAJ_SCALE).should == [RES, MIS, FASS, SOLS, LAS, SIS, DOSS, RES]
+        end
+        it "the major scale of MI# should be [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS, MIS]" do
+          scale(MIS, MAJ_SCALE).should == [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS, MIS]
+        end
+        it "the major scale of MI# should be [FAS, SOLS, LAS, SI, DOS, RES, MISS, FAS]" do
+          scale(FAS, MAJ_SCALE).should == [FAS, SOLS, LAS, SI, DOS, RES, MISS, FAS]
         end
       end
       context "Flated notes" do
