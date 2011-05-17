@@ -4,7 +4,7 @@ require 'music-utils'
 require 'music-utils/scales/scales'
 require 'benchmark'
 
-n = 100_000
+n = (ARGV[0].to_i != 0) ? ARGV[0].to_i : 100000
 label_width = 60
 
 # Helper method to print benchmarks titles 
