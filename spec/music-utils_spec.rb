@@ -216,6 +216,33 @@ describe MusicUtils do
           scale(SIF, MAJ_SCALE).should == [SIF, DO, RE, MIF, FA, SOL, LA]
         end
       end
+      context "Natural Minor scale" do
+        # [2, 1, 2, 2, 1, 2]
+        context "Natural notes" do
+          it "the natural minor scale of DO should be [DO, RE, MIF, FA, SOL, LAF, SIF]" do
+            scale(DO, NATURAL_MIN_SCALE).should == [DO, RE, MIF, FA, SOL, LAF, SIF]
+          end
+          it "the natural minor of RE should be [RE, MI, FA, SOL, LA, SIF, DO]" do
+            scale(RE, NATURAL_MIN_SCALE).should == [RE, MI, FA, SOL, LA, SIF, DO]
+          end
+          it "the natural minor of MI should be [MI, FAS, SOL, LA, SI, DO, RE]" do
+            scale(MI, NATURAL_MIN_SCALE).should == [MI, FAS, SOL, LA, SI, DO, RE]
+          end
+          it "the natural minor of FA should be [FA, SOL, LAF, SIF, DO, REF, MIF]" do
+            scale(FA, NATURAL_MIN_SCALE).should == [FA, SOL, LAF, SIF, DO, REF, MIF]
+          end
+          it "the natural minor of SOL should be [SOL, LA, SIF, DO, RE, MIF, FA]" do
+            scale(SOL, NATURAL_MIN_SCALE).should == [SOL, LA, SIF, DO, RE, MIF, FA]
+          end
+          it "the natural minor of LA should be [LA, SI, DO, RE, MI, FA, SOL]" do
+            scale(LA, NATURAL_MIN_SCALE).should == [LA, SI, DO, RE, MI, FA, SOL]
+          end
+          it "the natural minor of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
+            scale(SI, NATURAL_MIN_SCALE).should == [SI, DOS, RE, MI, FAS, SOL, LA]
+          end
+        end
+      end
+      
     end
   end
 

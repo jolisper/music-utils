@@ -58,6 +58,8 @@ module Scales
 
   CROMATIC_SCALE = [[SIS, DO, REFF], [DOS, REF], [DOSS, RE], [RES, MIF, FAFF], [RESS, MI, FAF], [MIS, FA, SOLFF], [MISS, FAS, SOLF], [FASS, SOL, LAFF], [SOLS, LAF], [SOLSS, LA, SIFF], [LAS, SIF], [LASS, SI, DOF]]
   MAJ_SCALE = [2, 2, 1, 2, 2, 2, 1]
+  NATURAL_MIN_SCALE = [2, 1, 2, 2, 1, 2, 2]
+  MELODIC_MIN_SCALE = [2, 1, 2, 2, 1, 2, 1]
   
   # Qualities
   PERF = 'P'
