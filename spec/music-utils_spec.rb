@@ -149,42 +149,72 @@ describe MusicUtils do
     context "Major scale" do
       context "Natural notes" do
         it "the major scale of DO should be [DO, RE, MI, FA, SOL, LA, SI, DO]" do
-          scale(DO, MAJ_SCALE).should == [DO, RE, MI, FA, SOL, LA, SI, DO]
+          scale(DO, MAJ_SCALE).should == [DO, RE, MI, FA, SOL, LA, SI]
         end
         it "the major scale of RE should be [RE, MI, FAS, SOL, LA, SI, DOS, RE]" do
-          scale(RE, MAJ_SCALE).should == [RE, MI, FAS, SOL, LA, SI, DOS, RE]
+          scale(RE, MAJ_SCALE).should == [RE, MI, FAS, SOL, LA, SI, DOS]
         end
         it "the major scale of MI should be [MI, FAS, SOLS, LA, SI, DOS, RES, MI]" do
-          scale(MI, MAJ_SCALE).should == [MI, FAS, SOLS, LA, SI, DOS, RES, MI]
+          scale(MI, MAJ_SCALE).should == [MI, FAS, SOLS, LA, SI, DOS, RES]
         end
         it "the major scale of FA should be [FA, SOL, LA, SIF, DO, RE, MI, FA]" do
-          scale(FA, MAJ_SCALE).should == [FA, SOL, LA, SIF, DO, RE, MI, FA]
+          scale(FA, MAJ_SCALE).should == [FA, SOL, LA, SIF, DO, RE, MI]
         end
         it "the major scale of SOL should be [SOL, LA, SI, DO, RE, MI, FAS, SOL]" do
-          scale(SOL, MAJ_SCALE).should == [SOL, LA, SI, DO, RE, MI, FAS, SOL]
+          scale(SOL, MAJ_SCALE).should == [SOL, LA, SI, DO, RE, MI, FAS]
         end
         it "the major scale of LA should be [LA, SI, DOS, RE, MI, FAS, SOLS, LA]" do
-          scale(LA, MAJ_SCALE).should == [LA, SI, DOS, RE, MI, FAS, SOLS, LA]
+          scale(LA, MAJ_SCALE).should == [LA, SI, DOS, RE, MI, FAS, SOLS]
         end
         it "the major scale of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
-          scale(SI, MAJ_SCALE).should == [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]
+          scale(SI, MAJ_SCALE).should == [SI, DOS, RES, MI, FAS, SOLS, LAS]
         end
       end
       context "Sharped notes" do
-        it "the major scale of DO# should be [DOS, RES, MIS, FAS, SOLS, LAS, SIS, DOS]" do
-          scale(DOS, MAJ_SCALE).should == [DOS, RES, MIS, FAS, SOLS, LAS, SIS, DOS]
+        it "the major scale of DO# should be [DOS, RES, MIS, FAS, SOLS, LAS, SIS]" do
+          scale(DOS, MAJ_SCALE).should == [DOS, RES, MIS, FAS, SOLS, LAS, SIS]
         end
-        it "the major scale of RE# should be [RES, MIS, FASS, SOLS, LAS, SIS, DOSS, RES]" do
-          scale(RES, MAJ_SCALE).should == [RES, MIS, FASS, SOLS, LAS, SIS, DOSS, RES]
+        it "the major scale of RE# should be [RES, MIS, FASS, SOLS, LAS, SIS, DOSS]" do
+          scale(RES, MAJ_SCALE).should == [RES, MIS, FASS, SOLS, LAS, SIS, DOSS]
         end
-        it "the major scale of MI# should be [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS, MIS]" do
-          scale(MIS, MAJ_SCALE).should == [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS, MIS]
+        it "the major scale of MI# should be [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS]" do
+          scale(MIS, MAJ_SCALE).should == [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS]
         end
-        it "the major scale of MI# should be [FAS, SOLS, LAS, SI, DOS, RES, MISS, FAS]" do
-          scale(FAS, MAJ_SCALE).should == [FAS, SOLS, LAS, SI, DOS, RES, MIS, FAS]
+        it "the major scale of FA# should be [FAS, SOLS, LAS, SI, DOS, RES, MISS]" do
+          scale(FAS, MAJ_SCALE).should == [FAS, SOLS, LAS, SI, DOS, RES, MIS]
+        end
+        it "the major scale of SOL# should be [SOLS, LAS, SIS, DOS, RES, MIS, FASS]" do
+          scale(SOLS, MAJ_SCALE).should == [SOLS, LAS, SIS, DOS, RES, MIS, FASS]
+        end
+        it "the major scale of LA# should be [SOLS, LAS, SIS, DOS, RES, MIS, FASS]" do
+          scale(LAS, MAJ_SCALE).should == [LAS, SIS, DOSS, RES, MIS, FASS, SOLSS]
+        end
+        it "the major scale of SI# should be [SIS, DOSS, RESS, MIS, FASS, SOLSS, LASS]" do
+          scale(SIS, MAJ_SCALE).should == [SIS, DOSS, RESS, MIS, FASS, SOLSS, LASS]
         end
       end
       context "Flated notes" do
+        it "the major scale of DOb should be [DOF, REF, MIF, FAF, SOLF, LAF, SIF]" do
+          scale(DOF, MAJ_SCALE).should == [DOF, REF, MIF, FAF, SOLF, LAF, SIF]
+        end
+        it "the major scale of REb should be [REF, MIF, FA, SOLF, LAF, SIF, DO]" do
+          scale(REF, MAJ_SCALE).should == [REF, MIF, FA, SOLF, LAF, SIF, DO]
+        end
+        it "the major scale of MIb should be [MIF, FA, SOL, LAF, SIF, DO, RE]" do
+          scale(MIF, MAJ_SCALE).should == [MIF, FA, SOL, LAF, SIF, DO, RE]
+        end
+        it "the major scale of FAb should be [FAF, SOLF, LAF, SIFF, DOF, REF, MIF]" do
+          scale(FAF, MAJ_SCALE).should == [FAF, SOLF, LAF, SIFF, DOF, REF, MIF]
+        end
+        it "the major scale of SOLb should be [SOLF, LAF, SIF, DOF, REF, MIF, FA]" do
+          scale(SOLF, MAJ_SCALE).should == [SOLF, LAF, SIF, DOF, REF, MIF, FA]
+        end
+        it "the major scale of LAb should be [LAF, SIF, DO, REF, MIF, FA, SOL]" do
+          scale(LAF, MAJ_SCALE).should == [LAF, SIF, DO, REF, MIF, FA, SOL]
+        end
+        it "the major scale of SIb should be [SIF, DO, RE, MIF, FA, SOL, LA]" do
+          scale(SIF, MAJ_SCALE).should == [SIF, DO, RE, MIF, FA, SOL, LA]
+        end
       end
     end
   end

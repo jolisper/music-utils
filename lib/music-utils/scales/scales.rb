@@ -56,7 +56,7 @@ module Scales
   SIS   = SI.to_s + SHARP
   SISS  = SI.to_s + DSHARP
 
-  CROMATIC_SCALE = [[SIS, DO], [DOS, REF], [DOSS, RE], [RES, MIF], [RESS, MI], [MIS, FA], [MISS, FAS, SOLF], [FASS, SOL], [SOLS, LAF], [SOLSS, LA], [LAS, SIF], [SI, DOF]]
+  CROMATIC_SCALE = [[SIS, DO, REFF], [DOS, REF], [DOSS, RE], [RES, MIF, FAFF], [RESS, MI, FAF], [MIS, FA, SOLFF], [MISS, FAS, SOLF], [FASS, SOL, LAFF], [SOLS, LAF], [SOLSS, LA, SIFF], [LAS, SIF], [LASS, SI, DOF]]
   MAJ_SCALE = [2, 2, 1, 2, 2, 2, 1]
   
   # Qualities
@@ -97,38 +97,49 @@ module Scales
     scale = []
     scale << from
 
-    #from_note, from_alter = MusicUtils::Interval.parse(from)
+    from_note, from_alter = MusicUtils::Interval.parse(from)
     
+    diatonic_scale = diatonic_scale_from(from_note)
+    diatonic_scale.delete(from_note.to_s)
+
     shift = 0
     length = CROMATIC_SCALE.length
 
     scale_struct.each do |shift|
-      #print 'i: ' + i.to_s, ', shift: ' + shift.to_s, ', sum: ' + (i + shift).to_s
-      #puts
-
       if i + shift > length - 1
         i = (i + shift) - (length)
         shift = 0
       end
 
-      if CROMATIC_SCALE[i + shift].is_a?(Array)
-        CROMATIC_SCALE[i + shift].each do |e|
-          e_note, e_alter = MusicUtils::Interval.parse(e)
-          last_note, last_alter = MusicUtils::Interval.parse(scale.last)
+      CROMATIC_SCALE[i + shift].each do |e|
+        e_note, e_alter = MusicUtils::Interval.parse(e)
           
-          if e_note != last_note
-            scale << e
-            break
-          end 
-        end
-      else
-        scale << CROMATIC_SCALE[i + shift]
+        if diatonic_scale.first.to_s == e_note.to_s
+          scale << e
+          diatonic_scale.delete(diatonic_scale.first)
+          break
+        end 
       end
-
       i += shift
     end
 
     scale
+  end
+
+  def diatonic_scale_from(note)
+    diatonic_scale = []
+    length = DIATONIC_SCALE.length
+    i = DIATONIC_SCALE.index(note.to_sym)
+    c = 0
+    while c < length
+      diatonic_scale << DIATONIC_SCALE[i].to_s
+      i += 1
+      c += 1
+      if i > length - 1
+        i = 0
+      end 
+    end
+    diatonic_scale
   end
 
 end
