@@ -1,3 +1,11 @@
+## 1.1.0 (May 19, 2011)
+
+Features:
+
+  - Added functionality to create major and minor scales
+  - Minor performance improvement to qualify intervals
+  
+
 ## 1.0.2 (May 12, 2011)
 
 Features:
