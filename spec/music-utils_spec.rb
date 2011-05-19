@@ -222,23 +222,71 @@ describe MusicUtils do
           it "the natural minor scale of DO should be [DO, RE, MIF, FA, SOL, LAF, SIF]" do
             scale(DO, NATURAL_MIN_SCALE).should == [DO, RE, MIF, FA, SOL, LAF, SIF]
           end
-          it "the natural minor of RE should be [RE, MI, FA, SOL, LA, SIF, DO]" do
+          it "the natural minor scale of RE should be [RE, MI, FA, SOL, LA, SIF, DO]" do
             scale(RE, NATURAL_MIN_SCALE).should == [RE, MI, FA, SOL, LA, SIF, DO]
           end
-          it "the natural minor of MI should be [MI, FAS, SOL, LA, SI, DO, RE]" do
+          it "the natural minor scale of MI should be [MI, FAS, SOL, LA, SI, DO, RE]" do
             scale(MI, NATURAL_MIN_SCALE).should == [MI, FAS, SOL, LA, SI, DO, RE]
           end
-          it "the natural minor of FA should be [FA, SOL, LAF, SIF, DO, REF, MIF]" do
+          it "the natural minor scale of FA should be [FA, SOL, LAF, SIF, DO, REF, MIF]" do
             scale(FA, NATURAL_MIN_SCALE).should == [FA, SOL, LAF, SIF, DO, REF, MIF]
           end
-          it "the natural minor of SOL should be [SOL, LA, SIF, DO, RE, MIF, FA]" do
+          it "the natural minor scale of SOL should be [SOL, LA, SIF, DO, RE, MIF, FA]" do
             scale(SOL, NATURAL_MIN_SCALE).should == [SOL, LA, SIF, DO, RE, MIF, FA]
           end
-          it "the natural minor of LA should be [LA, SI, DO, RE, MI, FA, SOL]" do
+          it "the natural minor scale of LA should be [LA, SI, DO, RE, MI, FA, SOL]" do
             scale(LA, NATURAL_MIN_SCALE).should == [LA, SI, DO, RE, MI, FA, SOL]
           end
-          it "the natural minor of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
+          it "the natural minor scale of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
             scale(SI, NATURAL_MIN_SCALE).should == [SI, DOS, RE, MI, FAS, SOL, LA]
+          end
+        end
+        # [2, 1, 2, 2, 1, 2]
+        context "Sharped notes" do
+          it "the natural minor scale of DO# should be [DO, RE, MIF, FA, SOL, LAF, SIF]" do
+            scale(DOS, NATURAL_MIN_SCALE).should == [DOS, RES, MI, FAS, SOLS, LA, SI]
+          end
+          it "the natural minor scale of RE# should be [RE, MI, FA, SOL, LA, SIF, DO]" do
+            scale(RES, NATURAL_MIN_SCALE).should == [RES, MIS, FAS, SOLS, LAS, SI, DOS]
+          end
+          it "the natural minor scale of MI# should be [MI, FAS, SOL, LA, SI, DO, RE]" do
+            scale(MIS, NATURAL_MIN_SCALE).should == [MIS, FASS, SOLS, LAS, SIS, DOS, RES]
+          end
+          it "the natural minor scale of FA# should be [FA, SOL, LAF, SIF, DO, REF, MIF]" do
+            scale(FAS, NATURAL_MIN_SCALE).should == [FAS, SOLS, LA, SI, DOS, RE, MI]
+          end
+          it "the natural minor scale of SOL# should be [SOL, LA, SIF, DO, RE, MIF, FA]" do
+            scale(SOLS, NATURAL_MIN_SCALE).should == [SOLS, LAS, SI, DOS, RES, MI, FAS]
+          end
+          it "the natural minor scale of LA# should be [LA, SI, DO, RE, MI, FA, SOL]" do
+            scale(LAS, NATURAL_MIN_SCALE).should == [LAS, SIS, DOS, RES, MIS, FAS, SOLS]
+          end
+          it "the natural minor scale of SI# should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
+            scale(SIS, NATURAL_MIN_SCALE).should == [SIS, DOSS, RES, MIS, FASS, SOLS, LAS]
+          end
+        end
+        # [2, 1, 2, 2, 1, 2]
+        context "Flated notes" do
+          it "the natural minor scale of DOb should be [DOF, REF, MIFF, FAF, SOLF, LAFF, SIFF]" do
+            scale(DOF, NATURAL_MIN_SCALE).should == [DOF, REF, MIFF, FAF, SOLF, LAFF, SIFF]
+          end
+          it "the natural minor scale of REb should be [REF, MIF, FAF, SOLF, LAF, SIFF, DOF]" do
+            scale(REF, NATURAL_MIN_SCALE).should == [REF, MIF, FAF, SOLF, LAF, SIFF, DOF]
+          end
+          it "the natural minor scale of MIb should be [MIF, FA, SOLF, LAF, SIF, DOF, REF]" do
+            scale(MIF, NATURAL_MIN_SCALE).should == [MIF, FA, SOLF, LAF, SIF, DOF, REF]
+          end
+          it "the natural minor scale of FAb should be [FAF, SOLF, LAFF, SIFF, DOF, REFF, MIFF]" do
+            scale(FAF, NATURAL_MIN_SCALE).should == [FAF, SOLF, LAFF, SIFF, DOF, REFF, MIFF]
+          end
+          it "the natural minor scale of SOLb should be [SOLF, LAF, SIFF, DOF, REF, MIFF, FAF]" do
+            scale(SOLF, NATURAL_MIN_SCALE).should == [SOLF, LAF, SIFF, DOF, REF, MIFF, FAF]
+          end
+          it "the natural minor scale of LAb should be [LAF, SIF, DOF, REF, MIF, FAF, SOLF]" do
+            scale(LAF, NATURAL_MIN_SCALE).should == [LAF, SIF, DOF, REF, MIF, FAF, SOLF]
+          end
+          it "the natural minor scale of SIb should be [SIF, DO, REF, MIF, FA, SOLF, LAF]" do
+            scale(SIF, NATURAL_MIN_SCALE).should == [SIF, DO, REF, MIF, FA, SOLF, LAF]
           end
         end
       end

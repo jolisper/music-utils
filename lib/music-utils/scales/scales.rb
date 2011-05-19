@@ -56,7 +56,7 @@ module Scales
   SIS   = SI.to_s + SHARP
   SISS  = SI.to_s + DSHARP
 
-  CROMATIC_SCALE = [[SIS, DO, REFF], [DOS, REF], [DOSS, RE], [RES, MIF, FAFF], [RESS, MI, FAF], [MIS, FA, SOLFF], [MISS, FAS, SOLF], [FASS, SOL, LAFF], [SOLS, LAF], [SOLSS, LA, SIFF], [LAS, SIF], [LASS, SI, DOF]]
+  CROMATIC_SCALE = [[SIS, DO, REFF], [DOS, REF], [DOSS, RE, MIFF], [RES, MIF, FAFF], [RESS, MI, FAF], [MIS, FA, SOLFF], [MISS, FAS, SOLF], [FASS, SOL, LAFF], [SOLS, LAF], [SOLSS, LA, SIFF], [LAS, SIF], [LASS, SI, DOF]]
   MAJ_SCALE = [2, 2, 1, 2, 2, 2, 1]
   NATURAL_MIN_SCALE = [2, 1, 2, 2, 1, 2, 2]
   MELODIC_MIN_SCALE = [2, 1, 2, 2, 1, 2, 1]
@@ -80,7 +80,8 @@ module Scales
         7 => {8 => DIMP, 9 => DIM, 10 => MIN, 11 => MAJ, 12 => AUG, 13 => AUGP},
         8 => {10 => DIMP, 11 => DIM, 12 => PERF, 13 => AUG, 14 => AUGP}
       }
-      
+  
+  # Create scale from a note and scale structure    
   def scale(from, scale_struct)
     i = 0
     find_it = false
@@ -127,7 +128,8 @@ module Scales
 
     scale
   end
-
+  
+  # 
   def diatonic_scale_from(note)
     diatonic_scale = []
     length = DIATONIC_SCALE.length
