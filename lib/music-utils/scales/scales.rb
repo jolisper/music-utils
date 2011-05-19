@@ -15,9 +15,9 @@ module Scales
   DIATONIC_SCALE = [DO, RE, MI, FA, SOL, LA, SI]
   
   # Alterations:
-  FLAT    = 'b'
+  FLAT    = 'f'
   DFLAT   = FLAT + FLAT
-  SHARP   = '#'
+  SHARP   = 's'
   DSHARP  = SHARP + SHARP
 
   # Altered notes

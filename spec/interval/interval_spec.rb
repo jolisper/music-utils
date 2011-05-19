@@ -27,7 +27,7 @@ describe  MusicUtils::Interval do
     end
 
     it "simple interval dob-mi# should be 6 semitones" do
-      i = Interval.new('dob', 'mi#', 0)
+      i = Interval.new('dof', 'mis', 0)
       i.semitones.should == 6
     end
 
@@ -54,12 +54,12 @@ describe  MusicUtils::Interval do
     end
   
     it "quality of interval do#-mi should be m" do
-      i = Interval.new('do#', 'mi', 0)
+      i = Interval.new('dos', 'mi', 0)
       i.quality.should == 'm'
     end
 
     it "quality of interval do#-mi should be m" do
-      i = Interval.new('do#', 'mi', 0)
+      i = Interval.new('dos', 'mi', 0)
       i.quality.should == 'm'
     end
 
@@ -69,7 +69,7 @@ describe  MusicUtils::Interval do
     end
 
     it "quality of compound interval dob-mi# should be AA" do
-      i = Interval.new('dob', 'mi#', 1)
+      i = Interval.new('dof', 'mis', 1)
       i.quality.should == 'AA'
     end
   
@@ -92,12 +92,12 @@ describe  MusicUtils::Interval do
     end
 
     it "the short notation of do#-mi interval should be m3" do
-      i = Interval.new('do#', 'mi', 0)
+      i = Interval.new('dos', 'mi', 0)
       i.short.should == 'm3'
     end
   
     it "the short notation of do#-mi compound interval should be m10" do
-      i = Interval.new('do#', 'mi', 1)
+      i = Interval.new('dos', 'mi', 1)
       i.short.should == 'm10'
     end
 
