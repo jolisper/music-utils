@@ -1,4 +1,5 @@
 require 'music-utils/scales/scales'
+require 'music-utils/note/note'
 
 module MusicUtils
   
@@ -7,8 +8,8 @@ module MusicUtils
     include Scales
   
     def initialize(note1, note2, step)
-      @note1, @note1_alt = Interval.parse(note1)
-      @note2, @note2_alt = Interval.parse(note2)
+      @note1, @note1_alt = MusicUtils::Note.parse(note1)
+      @note2, @note2_alt = MusicUtils::Note.parse(note2)
       @step = step
     end
     
@@ -76,19 +77,6 @@ module MusicUtils
     def short
       quality + number.to_s 
     end
-
-    # Parse notes to obtaining the raw note and its alterations separately
-    def Interval.parse(note)
-      n = 0
-  
-      # SOL is the only note of length = 3
-      n += 1 if note[0..2].to_sym == SOL
-      
-      note_aux = note[0..1 + n].to_sym
-      note_alt = note[2 + n..3 + n]
-    
-      [note_aux, note_alt]
-    end      
   
     private
   

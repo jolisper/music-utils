@@ -1,4 +1,4 @@
-require 'music-utils/interval/interval'
+require 'music-utils/note/note'
 
 # Scales module
 module Scales
@@ -102,7 +102,7 @@ module Scales
     scale = []
     scale << from
 
-    from_note, from_alter = MusicUtils::Interval.parse(from)
+    from_note, from_alter = MusicUtils::Note.parse(from)
     
     diatonic_scale = diatonic_scale_from(from_note)
     diatonic_scale.delete(from_note)
@@ -116,7 +116,7 @@ module Scales
       end
 
       CROMATIC_SCALE[i + shift].each do |e|
-        e_note, e_alter = MusicUtils::Interval.parse(e)
+        e_note, e_alter = MusicUtils::Note.parse(e)
           
         if diatonic_scale.first == e_note
           scale << e
