@@ -149,144 +149,144 @@ describe MusicUtils do
     context "Major scale" do
       context "Natural notes" do
         it "the major scale of DO should be [DO, RE, MI, FA, SOL, LA, SI, DO]" do
-          scale(DO, MAJ_SCALE).should == [DO, RE, MI, FA, SOL, LA, SI]
+          MusicUtils.scale(DO, MAJ_SCALE).should == [DO, RE, MI, FA, SOL, LA, SI]
         end
         it "the major scale of RE should be [RE, MI, FAS, SOL, LA, SI, DOS, RE]" do
-          scale(RE, MAJ_SCALE).should == [RE, MI, FAS, SOL, LA, SI, DOS]
+          MusicUtils.scale(RE, MAJ_SCALE).should == [RE, MI, FAS, SOL, LA, SI, DOS]
         end
         it "the major scale of MI should be [MI, FAS, SOLS, LA, SI, DOS, RES, MI]" do
-          scale(MI, MAJ_SCALE).should == [MI, FAS, SOLS, LA, SI, DOS, RES]
+          MusicUtils.scale(MI, MAJ_SCALE).should == [MI, FAS, SOLS, LA, SI, DOS, RES]
         end
         it "the major scale of FA should be [FA, SOL, LA, SIF, DO, RE, MI, FA]" do
-          scale(FA, MAJ_SCALE).should == [FA, SOL, LA, SIF, DO, RE, MI]
+          MusicUtils.scale(FA, MAJ_SCALE).should == [FA, SOL, LA, SIF, DO, RE, MI]
         end
         it "the major scale of SOL should be [SOL, LA, SI, DO, RE, MI, FAS, SOL]" do
-          scale(SOL, MAJ_SCALE).should == [SOL, LA, SI, DO, RE, MI, FAS]
+          MusicUtils.scale(SOL, MAJ_SCALE).should == [SOL, LA, SI, DO, RE, MI, FAS]
         end
         it "the major scale of LA should be [LA, SI, DOS, RE, MI, FAS, SOLS, LA]" do
-          scale(LA, MAJ_SCALE).should == [LA, SI, DOS, RE, MI, FAS, SOLS]
+          MusicUtils.scale(LA, MAJ_SCALE).should == [LA, SI, DOS, RE, MI, FAS, SOLS]
         end
         it "the major scale of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
-          scale(SI, MAJ_SCALE).should == [SI, DOS, RES, MI, FAS, SOLS, LAS]
+          MusicUtils.scale(SI, MAJ_SCALE).should == [SI, DOS, RES, MI, FAS, SOLS, LAS]
         end
       end
       context "Sharped notes" do
         it "the major scale of DO# should be [DOS, RES, MIS, FAS, SOLS, LAS, SIS]" do
-          scale(DOS, MAJ_SCALE).should == [DOS, RES, MIS, FAS, SOLS, LAS, SIS]
+          MusicUtils.scale(DOS, MAJ_SCALE).should == [DOS, RES, MIS, FAS, SOLS, LAS, SIS]
         end
         it "the major scale of RE# should be [RES, MIS, FASS, SOLS, LAS, SIS, DOSS]" do
-          scale(RES, MAJ_SCALE).should == [RES, MIS, FASS, SOLS, LAS, SIS, DOSS]
+          MusicUtils.scale(RES, MAJ_SCALE).should == [RES, MIS, FASS, SOLS, LAS, SIS, DOSS]
         end
         it "the major scale of MI# should be [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS]" do
-          scale(MIS, MAJ_SCALE).should == [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS]
+          MusicUtils.scale(MIS, MAJ_SCALE).should == [MIS, FASS, SOLSS, LAS, SIS, DOSS, RESS]
         end
         it "the major scale of FA# should be [FAS, SOLS, LAS, SI, DOS, RES, MISS]" do
-          scale(FAS, MAJ_SCALE).should == [FAS, SOLS, LAS, SI, DOS, RES, MIS]
+          MusicUtils.scale(FAS, MAJ_SCALE).should == [FAS, SOLS, LAS, SI, DOS, RES, MIS]
         end
         it "the major scale of SOL# should be [SOLS, LAS, SIS, DOS, RES, MIS, FASS]" do
-          scale(SOLS, MAJ_SCALE).should == [SOLS, LAS, SIS, DOS, RES, MIS, FASS]
+          MusicUtils.scale(SOLS, MAJ_SCALE).should == [SOLS, LAS, SIS, DOS, RES, MIS, FASS]
         end
         it "the major scale of LA# should be [SOLS, LAS, SIS, DOS, RES, MIS, FASS]" do
-          scale(LAS, MAJ_SCALE).should == [LAS, SIS, DOSS, RES, MIS, FASS, SOLSS]
+          MusicUtils.scale(LAS, MAJ_SCALE).should == [LAS, SIS, DOSS, RES, MIS, FASS, SOLSS]
         end
         it "the major scale of SI# should be [SIS, DOSS, RESS, MIS, FASS, SOLSS, LASS]" do
-          scale(SIS, MAJ_SCALE).should == [SIS, DOSS, RESS, MIS, FASS, SOLSS, LASS]
+          MusicUtils.scale(SIS, MAJ_SCALE).should == [SIS, DOSS, RESS, MIS, FASS, SOLSS, LASS]
         end
       end
       context "Flated notes" do
         it "the major scale of DOb should be [DOF, REF, MIF, FAF, SOLF, LAF, SIF]" do
-          scale(DOF, MAJ_SCALE).should == [DOF, REF, MIF, FAF, SOLF, LAF, SIF]
+          MusicUtils.scale(DOF, MAJ_SCALE).should == [DOF, REF, MIF, FAF, SOLF, LAF, SIF]
         end
         it "the major scale of REb should be [REF, MIF, FA, SOLF, LAF, SIF, DO]" do
-          scale(REF, MAJ_SCALE).should == [REF, MIF, FA, SOLF, LAF, SIF, DO]
+          MusicUtils.scale(REF, MAJ_SCALE).should == [REF, MIF, FA, SOLF, LAF, SIF, DO]
         end
         it "the major scale of MIb should be [MIF, FA, SOL, LAF, SIF, DO, RE]" do
-          scale(MIF, MAJ_SCALE).should == [MIF, FA, SOL, LAF, SIF, DO, RE]
+          MusicUtils.scale(MIF, MAJ_SCALE).should == [MIF, FA, SOL, LAF, SIF, DO, RE]
         end
         it "the major scale of FAb should be [FAF, SOLF, LAF, SIFF, DOF, REF, MIF]" do
-          scale(FAF, MAJ_SCALE).should == [FAF, SOLF, LAF, SIFF, DOF, REF, MIF]
+          MusicUtils.scale(FAF, MAJ_SCALE).should == [FAF, SOLF, LAF, SIFF, DOF, REF, MIF]
         end
         it "the major scale of SOLb should be [SOLF, LAF, SIF, DOF, REF, MIF, FA]" do
-          scale(SOLF, MAJ_SCALE).should == [SOLF, LAF, SIF, DOF, REF, MIF, FA]
+          MusicUtils.scale(SOLF, MAJ_SCALE).should == [SOLF, LAF, SIF, DOF, REF, MIF, FA]
         end
         it "the major scale of LAb should be [LAF, SIF, DO, REF, MIF, FA, SOL]" do
-          scale(LAF, MAJ_SCALE).should == [LAF, SIF, DO, REF, MIF, FA, SOL]
+          MusicUtils.scale(LAF, MAJ_SCALE).should == [LAF, SIF, DO, REF, MIF, FA, SOL]
         end
         it "the major scale of SIb should be [SIF, DO, RE, MIF, FA, SOL, LA]" do
-          scale(SIF, MAJ_SCALE).should == [SIF, DO, RE, MIF, FA, SOL, LA]
+          MusicUtils.scale(SIF, MAJ_SCALE).should == [SIF, DO, RE, MIF, FA, SOL, LA]
         end
       end
       context "Natural Minor scale" do
         # [2, 1, 2, 2, 1, 2]
         context "Natural notes" do
           it "the natural minor scale of DO should be [DO, RE, MIF, FA, SOL, LAF, SIF]" do
-            scale(DO, NATURAL_MIN_SCALE).should == [DO, RE, MIF, FA, SOL, LAF, SIF]
+            MusicUtils.scale(DO, NATURAL_MIN_SCALE).should == [DO, RE, MIF, FA, SOL, LAF, SIF]
           end
           it "the natural minor scale of RE should be [RE, MI, FA, SOL, LA, SIF, DO]" do
-            scale(RE, NATURAL_MIN_SCALE).should == [RE, MI, FA, SOL, LA, SIF, DO]
+            MusicUtils.scale(RE, NATURAL_MIN_SCALE).should == [RE, MI, FA, SOL, LA, SIF, DO]
           end
           it "the natural minor scale of MI should be [MI, FAS, SOL, LA, SI, DO, RE]" do
-            scale(MI, NATURAL_MIN_SCALE).should == [MI, FAS, SOL, LA, SI, DO, RE]
+            MusicUtils.scale(MI, NATURAL_MIN_SCALE).should == [MI, FAS, SOL, LA, SI, DO, RE]
           end
           it "the natural minor scale of FA should be [FA, SOL, LAF, SIF, DO, REF, MIF]" do
-            scale(FA, NATURAL_MIN_SCALE).should == [FA, SOL, LAF, SIF, DO, REF, MIF]
+            MusicUtils.scale(FA, NATURAL_MIN_SCALE).should == [FA, SOL, LAF, SIF, DO, REF, MIF]
           end
           it "the natural minor scale of SOL should be [SOL, LA, SIF, DO, RE, MIF, FA]" do
-            scale(SOL, NATURAL_MIN_SCALE).should == [SOL, LA, SIF, DO, RE, MIF, FA]
+            MusicUtils.scale(SOL, NATURAL_MIN_SCALE).should == [SOL, LA, SIF, DO, RE, MIF, FA]
           end
           it "the natural minor scale of LA should be [LA, SI, DO, RE, MI, FA, SOL]" do
-            scale(LA, NATURAL_MIN_SCALE).should == [LA, SI, DO, RE, MI, FA, SOL]
+            MusicUtils.scale(LA, NATURAL_MIN_SCALE).should == [LA, SI, DO, RE, MI, FA, SOL]
           end
           it "the natural minor scale of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
-            scale(SI, NATURAL_MIN_SCALE).should == [SI, DOS, RE, MI, FAS, SOL, LA]
+            MusicUtils.scale(SI, NATURAL_MIN_SCALE).should == [SI, DOS, RE, MI, FAS, SOL, LA]
           end
         end
         # [2, 1, 2, 2, 1, 2]
         context "Sharped notes" do
           it "the natural minor scale of DO# should be [DO, RE, MIF, FA, SOL, LAF, SIF]" do
-            scale(DOS, NATURAL_MIN_SCALE).should == [DOS, RES, MI, FAS, SOLS, LA, SI]
+            MusicUtils.scale(DOS, NATURAL_MIN_SCALE).should == [DOS, RES, MI, FAS, SOLS, LA, SI]
           end
           it "the natural minor scale of RE# should be [RE, MI, FA, SOL, LA, SIF, DO]" do
-            scale(RES, NATURAL_MIN_SCALE).should == [RES, MIS, FAS, SOLS, LAS, SI, DOS]
+            MusicUtils.scale(RES, NATURAL_MIN_SCALE).should == [RES, MIS, FAS, SOLS, LAS, SI, DOS]
           end
           it "the natural minor scale of MI# should be [MI, FAS, SOL, LA, SI, DO, RE]" do
-            scale(MIS, NATURAL_MIN_SCALE).should == [MIS, FASS, SOLS, LAS, SIS, DOS, RES]
+           MusicUtils.scale(MIS, NATURAL_MIN_SCALE).should == [MIS, FASS, SOLS, LAS, SIS, DOS, RES]
           end
           it "the natural minor scale of FA# should be [FA, SOL, LAF, SIF, DO, REF, MIF]" do
-            scale(FAS, NATURAL_MIN_SCALE).should == [FAS, SOLS, LA, SI, DOS, RE, MI]
+            MusicUtils.scale(FAS, NATURAL_MIN_SCALE).should == [FAS, SOLS, LA, SI, DOS, RE, MI]
           end
           it "the natural minor scale of SOL# should be [SOL, LA, SIF, DO, RE, MIF, FA]" do
-            scale(SOLS, NATURAL_MIN_SCALE).should == [SOLS, LAS, SI, DOS, RES, MI, FAS]
+            MusicUtils.scale(SOLS, NATURAL_MIN_SCALE).should == [SOLS, LAS, SI, DOS, RES, MI, FAS]
           end
           it "the natural minor scale of LA# should be [LA, SI, DO, RE, MI, FA, SOL]" do
-            scale(LAS, NATURAL_MIN_SCALE).should == [LAS, SIS, DOS, RES, MIS, FAS, SOLS]
+            MusicUtils.scale(LAS, NATURAL_MIN_SCALE).should == [LAS, SIS, DOS, RES, MIS, FAS, SOLS]
           end
           it "the natural minor scale of SI# should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
-            scale(SIS, NATURAL_MIN_SCALE).should == [SIS, DOSS, RES, MIS, FASS, SOLS, LAS]
+            MusicUtils.scale(SIS, NATURAL_MIN_SCALE).should == [SIS, DOSS, RES, MIS, FASS, SOLS, LAS]
           end
         end
         # [2, 1, 2, 2, 1, 2]
         context "Flated notes" do
           it "the natural minor scale of DOb should be [DOF, REF, MIFF, FAF, SOLF, LAFF, SIFF]" do
-            scale(DOF, NATURAL_MIN_SCALE).should == [DOF, REF, MIFF, FAF, SOLF, LAFF, SIFF]
+            MusicUtils.scale(DOF, NATURAL_MIN_SCALE).should == [DOF, REF, MIFF, FAF, SOLF, LAFF, SIFF]
           end
           it "the natural minor scale of REb should be [REF, MIF, FAF, SOLF, LAF, SIFF, DOF]" do
-            scale(REF, NATURAL_MIN_SCALE).should == [REF, MIF, FAF, SOLF, LAF, SIFF, DOF]
+            MusicUtils.scale(REF, NATURAL_MIN_SCALE).should == [REF, MIF, FAF, SOLF, LAF, SIFF, DOF]
           end
           it "the natural minor scale of MIb should be [MIF, FA, SOLF, LAF, SIF, DOF, REF]" do
-            scale(MIF, NATURAL_MIN_SCALE).should == [MIF, FA, SOLF, LAF, SIF, DOF, REF]
+            MusicUtils.scale(MIF, NATURAL_MIN_SCALE).should == [MIF, FA, SOLF, LAF, SIF, DOF, REF]
           end
           it "the natural minor scale of FAb should be [FAF, SOLF, LAFF, SIFF, DOF, REFF, MIFF]" do
-            scale(FAF, NATURAL_MIN_SCALE).should == [FAF, SOLF, LAFF, SIFF, DOF, REFF, MIFF]
+            MusicUtils.scale(FAF, NATURAL_MIN_SCALE).should == [FAF, SOLF, LAFF, SIFF, DOF, REFF, MIFF]
           end
           it "the natural minor scale of SOLb should be [SOLF, LAF, SIFF, DOF, REF, MIFF, FAF]" do
-            scale(SOLF, NATURAL_MIN_SCALE).should == [SOLF, LAF, SIFF, DOF, REF, MIFF, FAF]
+            MusicUtils.scale(SOLF, NATURAL_MIN_SCALE).should == [SOLF, LAF, SIFF, DOF, REF, MIFF, FAF]
           end
           it "the natural minor scale of LAb should be [LAF, SIF, DOF, REF, MIF, FAF, SOLF]" do
-            scale(LAF, NATURAL_MIN_SCALE).should == [LAF, SIF, DOF, REF, MIF, FAF, SOLF]
+            MusicUtils.scale(LAF, NATURAL_MIN_SCALE).should == [LAF, SIF, DOF, REF, MIF, FAF, SOLF]
           end
           it "the natural minor scale of SIb should be [SIF, DO, REF, MIF, FA, SOLF, LAF]" do
-            scale(SIF, NATURAL_MIN_SCALE).should == [SIF, DO, REF, MIF, FA, SOLF, LAF]
+            MusicUtils.scale(SIF, NATURAL_MIN_SCALE).should == [SIF, DO, REF, MIF, FA, SOLF, LAF]
           end
         end
       end

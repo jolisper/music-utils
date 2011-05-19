@@ -21,40 +21,40 @@ module Scales
   DSHARP  = SHARP + SHARP
 
   # Altered notes
-  DOF   = DO.to_s + FLAT
-  DOFF  = DO.to_s + DFLAT
-  DOS   = DO.to_s + SHARP
-  DOSS  = DO.to_s + DSHARP
+  DOF   = (DO.to_s + FLAT).to_sym
+  DOFF  = (DO.to_s + DFLAT).to_sym
+  DOS   = (DO.to_s + SHARP).to_sym
+  DOSS  = (DO.to_s + DSHARP).to_sym
   
-  REF   = RE.to_s + FLAT
-  REFF  = RE.to_s + DFLAT
-  RES   = RE.to_s + SHARP
-  RESS  = RE.to_s + DSHARP
+  REF   = (RE.to_s + FLAT).to_sym
+  REFF  = (RE.to_s + DFLAT).to_sym
+  RES   = (RE.to_s + SHARP).to_sym
+  RESS  = (RE.to_s + DSHARP).to_sym
   
-  MIF   = MI.to_s + FLAT
-  MIFF  = MI.to_s + DFLAT
-  MIS   = MI.to_s + SHARP
-  MISS  = MI.to_s + DSHARP
+  MIF   = (MI.to_s + FLAT).to_sym
+  MIFF  = (MI.to_s + DFLAT).to_sym
+  MIS   = (MI.to_s + SHARP).to_sym
+  MISS  = (MI.to_s + DSHARP).to_sym
   
-  FAF   = FA.to_s + FLAT
-  FAFF  = FA.to_s + DFLAT
-  FAS   = FA.to_s + SHARP
-  FASS  = FA.to_s + DSHARP
+  FAF   = (FA.to_s + FLAT).to_sym
+  FAFF  = (FA.to_s + DFLAT).to_sym
+  FAS   = (FA.to_s + SHARP).to_sym
+  FASS  = (FA.to_s + DSHARP).to_sym
   
-  SOLF  = SOL.to_s + FLAT
-  SOLFF = SOL.to_s + DFLAT
-  SOLS  = SOL.to_s + SHARP
-  SOLSS = SOL.to_s + DSHARP
+  SOLF  = (SOL.to_s + FLAT).to_sym
+  SOLFF = (SOL.to_s + DFLAT).to_sym
+  SOLS  = (SOL.to_s + SHARP).to_sym
+  SOLSS = (SOL.to_s + DSHARP).to_sym
 
-  LAF   = LA.to_s + FLAT
-  LAFF  = LA.to_s + DFLAT
-  LAS   = LA.to_s + SHARP
-  LASS  = LA.to_s + DSHARP
+  LAF   = (LA.to_s + FLAT).to_sym
+  LAFF  = (LA.to_s + DFLAT).to_sym
+  LAS   = (LA.to_s + SHARP).to_sym
+  LASS  = (LA.to_s + DSHARP).to_sym
 
-  SIF   = SI.to_s + FLAT
-  SIFF  = SI.to_s + DFLAT
-  SIS   = SI.to_s + SHARP
-  SISS  = SI.to_s + DSHARP
+  SIF   = (SI.to_s + FLAT).to_sym
+  SIFF  = (SI.to_s + DFLAT).to_sym
+  SIS   = (SI.to_s + SHARP).to_sym
+  SISS  = (SI.to_s + DSHARP).to_sym
 
   CROMATIC_SCALE = [[SIS, DO, REFF], [DOS, REF], [DOSS, RE, MIFF], [RES, MIF, FAFF], [RESS, MI, FAF], [MIS, FA, SOLFF], [MISS, FAS, SOLF], [FASS, SOL, LAFF], [SOLS, LAF], [SOLSS, LA, SIFF], [LAS, SIF], [LASS, SI, DOF]]
   MAJ_SCALE = [2, 2, 1, 2, 2, 2, 1]
@@ -82,7 +82,9 @@ module Scales
       }
   
   # Create scale from a note and scale structure    
-  def scale(from, scale_struct)
+  def Scales.scale(from, scale_struct)
+    from = from.to_sym
+    
     i = 0
     find_it = false
     CROMATIC_SCALE.each do |e|
@@ -103,7 +105,7 @@ module Scales
     from_note, from_alter = MusicUtils::Interval.parse(from)
     
     diatonic_scale = diatonic_scale_from(from_note)
-    diatonic_scale.delete(from_note.to_s)
+    diatonic_scale.delete(from_note)
 
     shift = 0
     length = CROMATIC_SCALE.length
@@ -117,7 +119,7 @@ module Scales
       CROMATIC_SCALE[i + shift].each do |e|
         e_note, e_alter = MusicUtils::Interval.parse(e)
           
-        if diatonic_scale.first.to_s == e_note.to_s
+        if diatonic_scale.first == e_note
           scale << e
           diatonic_scale.delete(diatonic_scale.first)
           break
@@ -129,14 +131,14 @@ module Scales
     scale
   end
   
-  # 
-  def diatonic_scale_from(note)
+  # Create a diatonic scale starting with the  "from" note
+  def Scales.diatonic_scale_from(from)
     diatonic_scale = []
     length = DIATONIC_SCALE.length
-    i = DIATONIC_SCALE.index(note.to_sym)
+    i = DIATONIC_SCALE.index(from)
     c = 0
     while c < length
-      diatonic_scale << DIATONIC_SCALE[i].to_s
+      diatonic_scale << DIATONIC_SCALE[i]
       i += 1
       c += 1
       if i > length - 1

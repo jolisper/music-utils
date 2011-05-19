@@ -24,5 +24,10 @@ module MusicUtils
   def MusicUtils.short(note1, note2, step = 0)
     Interval.new(note1, note2, step).short
   end
+  
+  # Returns a scale 
+  def MusicUtils.scale(from, scale)
+    Scales.scale(from, scale)
+  end
 
 end
