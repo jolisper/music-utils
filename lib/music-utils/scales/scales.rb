@@ -107,7 +107,6 @@ module Scales
     diatonic_scale = diatonic_scale_from(from_note)
     diatonic_scale.delete(from_note)
 
-    shift = 0
     length = CROMATIC_SCALE.length
 
     scale_struct.each do |shift|
