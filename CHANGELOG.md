@@ -1,3 +1,10 @@
+## 1.1.1 (May 20, 2011)
+
+Features:
+
+  - Minor implementation improvements
+  
+
 ## 1.1.0 (May 19, 2011)
 
 Features:
