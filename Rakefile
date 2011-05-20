@@ -31,5 +31,5 @@ end
 # Profiler tasks
 desc "Run profiler"
 task :profile do
-  `ruby -w -rprofile benchmark/music-utils_bm.rb 10000`
+  `ruby -w -rprofile benchmark/music-utils_bm.rb 1000`
 end
