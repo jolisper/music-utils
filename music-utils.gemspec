@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors       = ["Jorge Luis Pérez"]
   s.email         = ["jorgeluis700@gmail.com"]
   s.homepage      = "http://github.com/jorgeluis700/music-utils"
-  s.summary       = %q{Utils for music}
-  s.description   = %q{Utils for music. At the moment only to classify intervals.}
+  s.summary       = %q{Utils for common music tasks.}
+  s.description   = %q{Utils to classify music intervals, create scales and more. See README.md and CHANGELOG.md on homepage for more info.}
   s.license       = %q{MIT}
 
   # Files

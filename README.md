@@ -1,35 +1,67 @@
 music-utils
-=========
+===========
 
-Utils for music. For now to classify music intervals and create scales.
+Utils to clasify music intervals, create scales and more.
+
 
 Examples
 --------
-Simple and Compound intervals:
+
+### Intervals
+
+Simples:
   
-    MusicUtils.number(:do, :mi)                 #=> 3 (3th)
-    MusicUtils.semitones(:do, :mi, 1)           #=> 16 (semi-tones)
-    MusicUtils.quality(:do, :mi)                #=> M (major)
+    MusicUtils.number(:do, :mi)                   #=> 3 (3th)
+    MusicUtils.semitones(:do, :mi)                #=> 4 (semi-tones)
+    MusicUtils.quality(:do, :mi)                  #=> M (major)
+
+Compounds:
+
+    MusicUtils.number(:do, :mi, 1)                #=> 3 (3th)
+    MusicUtils.semitones(:do, :mi, 1)             #=> 16 (semi-tones)
+    MusicUtils.quality(:do, :mi, 1)               #=> M (major)
 
 Short Notation:
 
-    MusicUtils.short(:do, :re)                  #=> M2
-    MusicUtils.short(:do, :re, 1)               #=> M9
+    MusicUtils.short(:do, :mi)                    #=> M2
+    MusicUtils.short(:do, :mi, 1)                 #=> M9
+
+### Scales
 
 Create scales:
 
-    MusicUtils.scale(:fa, MusicUtils::MAJ_SCALE) #=> [:fa, :sol, :la, :sib, :do, :re, :mi]
+    MusicUtils.scale(:fa, MusicUtils::MAJ_SCALE)  #=> [:fa, :sol, :la, :sib, :do, :re, :mi]
 
 
 Installation
 -----------
 
     gem install music-utils
+    
+
+Usage
+-----
+The `MusicUtils` module has constants to refer to common items like notes and scales. 
+
+    require 'music-utils'
+    
+    MusicUtils.short(MusicUtils::SOL, MusicUtils::DOF)
+    MusicUtils.scale(MusicUtils::SOL, MusicUtils::MAJ_SCALE)
+
+
+Testing
+-------
+
+To run the tests:
+
+    $ rake
+
 
 To Do
 -----
-  * Add more rspec examples
-  * Add validations (notes, alterations, etc) 
+
+* Add validations (notes, alterations, etc) 
+
 
 Copyright
 ---------
