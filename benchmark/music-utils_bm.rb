@@ -4,7 +4,9 @@ require 'music-utils'
 require 'music-utils/scales/scales'
 require 'benchmark'
 
-n = (ARGV[0].to_i != 0) ? ARGV[0].to_i : 100000
+include MusicUtils::Scales
+
+n = (ARGV[0].to_i != 0) ? ARGV[0].to_i : 50000
 label_width = 60
 
 # Helper method to print benchmarks titles 
@@ -18,22 +20,34 @@ end
 title 'Classifying do-mi interval', n
 Benchmark.bm(label_width) do |b|
   b.report('with strings (number):') do 
-    n.times { MusicUtils.number('do', 'mi') }
+    n.times { MusicUtils.number('do', 'sol') }
   end
   b.report('with strings (quality):') do 
-    n.times { MusicUtils.quality('do', 'mi') }
+    n.times { MusicUtils.quality('do', 'sol') }
   end
   b.report('with strings (short notation):') do 
-    n.times { MusicUtils.short('do', 'mi') }
+    n.times { MusicUtils.short('do', 'sol') }
   end
   
   b.report('with scales (number):') do
-    n.times { MusicUtils.number(Scales::DO, Scales::MI) }
+    n.times { MusicUtils.number(DO, SOL) }
   end
   b.report('with scales (quality):') do
-    n.times { MusicUtils.quality(Scales::DO, Scales::MI) }
+    n.times { MusicUtils.quality(DO, SOL) }
   end
   b.report('with scales (short notation):') do
-    n.times { MusicUtils.short(Scales::DO, Scales::MI) }
+    n.times { MusicUtils.short(DO, SOL) }
   end
 end
+
+title 'Create scales', n
+Benchmark.bm(label_width) do |b|
+  b.report('FA major scale: ') do 
+    n.times { MusicUtils.scale(:fa, MusicUtils::MAJ_SCALE) }
+  end
+  b.report('SIb natural minor scale: ') do 
+    n.times { MusicUtils.scale(:sif, MusicUtils::NATURAL_MIN_SCALE) }
+  end
+end
+
+
