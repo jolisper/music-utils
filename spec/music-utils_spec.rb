@@ -94,9 +94,12 @@ describe MusicUtils do
           MusicUtils.semitones(DO, DO).should == 12 
         end
       end
-      context "Diatonic from SOL" do
+      context "Diatonic from others" do
+        it "simple interval so-la should be 5 semitones" do
+          MusicUtils.semitones(SOL, LA).should == 2 
+        end
         it "simple interval so-do should be 5 semitones" do
-          MusicUtils.semitones(SOL, DO).should == 5 
+          MusicUtils.semitones(RE, DOS).should == 11
         end
       end
     end

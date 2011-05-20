@@ -30,11 +30,11 @@ module MusicUtils
   
     # Returns the number of semitones
     def semitones
+      return CROMATIC_SCALE.length if @note1 == @note2
+      
       # initialize counter and index of scale
       i = note1_index 
       count = 0
-  
-      count, i = no_unison(count, i)
       
       # counting semi-tones
       until_find_note2(i) do |ii|
