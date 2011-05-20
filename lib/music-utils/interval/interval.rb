@@ -82,12 +82,12 @@ module MusicUtils
   
     # Common loop to search note 2 
     def until_find_note2(i)
-      length = DIATONIC_SCALE.length
+      length = DIATONIC_SCALE.length - 1
       # search note2
       while DIATONIC_SCALE[i] != @note2
         i += 1
         if i > length
-          i = 0; next 
+          i = 0; 
         end
         yield i
       end
@@ -96,7 +96,12 @@ module MusicUtils
     # Jumps to the next note if note 1 and note 2 are the same
     def no_unison(count, i)   
       if @note1 == @note2
-        count += 1; i += 1
+        if DIATONIC_SCALE[i] == Scales::FA or DIATONIC_SCALE[i] == Scales::DO
+          count += 1
+        else
+          count += 2
+        end
+        i += 1
       end
       [count, i]
     end

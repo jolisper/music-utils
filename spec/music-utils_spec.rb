@@ -90,6 +90,14 @@ describe MusicUtils do
         it "compound interval do-si should be 21 semitones" do
           MusicUtils.semitones(DO, SI, 1).should == 23 
         end
+        it "compound interval do-do should be 21 semitones" do
+          MusicUtils.semitones(DO, DO).should == 12 
+        end
+      end
+      context "Diatonic from SOL" do
+        it "simple interval so-do should be 5 semitones" do
+          MusicUtils.semitones(SOL, DO).should == 5 
+        end
       end
     end
     
