@@ -61,6 +61,7 @@ To Do
 -----
 
 * Add validations (notes, alterations, etc) 
+* Add support to pentatonic scale and others
 
 
 Copyright
