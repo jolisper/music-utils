@@ -1,5 +1,6 @@
 require 'music-utils/note/note'
 
+module MusicUtils
 # Scales module
 module Scales
   
@@ -147,4 +148,5 @@ module Scales
     diatonic_scale
   end
 
+end
 end
