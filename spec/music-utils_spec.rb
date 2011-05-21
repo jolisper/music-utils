@@ -95,11 +95,23 @@ describe MusicUtils do
         end
       end
       context "Diatonic from others" do
-        it "simple interval so-la should be 5 semitones" do
+        it "simple interval so-la should be 2 semitones" do
           MusicUtils.semitones(SOL, LA).should == 2 
         end
-        it "simple interval so-do should be 5 semitones" do
-          MusicUtils.semitones(RE, DOS).should == 11
+        it "simple interval re-do should be 10 semitones" do
+          MusicUtils.semitones(RE, DO).should == 10
+        end
+        it "simple interval fa-re should be 9 semitones" do
+          MusicUtils.semitones(FA, RE).should == 9
+        end
+        it "simple interval si-mi should be 5 semitones" do
+          MusicUtils.semitones(SI, MI).should == 5
+        end
+        it "simple interval mi-si should be 7 semitones" do
+          MusicUtils.semitones(MI, SI).should == 7
+        end
+        it "simple interval fa-do should be 7 semitones" do
+          MusicUtils.semitones(FA, DO).should == 7
         end
       end
     end

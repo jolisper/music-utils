@@ -1,3 +1,10 @@
+## 1.1.2 (May 21, 2011)
+
+Features:
+
+  - Fixed bugs in semitones count
+  
+
 ## 1.1.1 (May 20, 2011)
 
 Features:

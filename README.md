@@ -60,6 +60,7 @@ To run the tests:
 To Do
 -----
 
+* Fix octave semitones count bug 
 * Add validations (notes, alterations, etc) 
 * Add support to pentatonic scale and others
 
