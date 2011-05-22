@@ -17,7 +17,7 @@ Simples:
 
 Compounds:
 
-    MusicUtils.number(:do, :mi, 1)                #=> 10 (3th)
+    MusicUtils.number(:do, :mi, 1)                #=> 10 (10th)
     MusicUtils.semitones(:do, :mi, 1)             #=> 16 (semi-tones)
     MusicUtils.quality(:do, :mi, 1)               #=> M (major)
 
