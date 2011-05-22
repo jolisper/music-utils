@@ -17,14 +17,14 @@ Simples:
 
 Compounds:
 
-    MusicUtils.number(:do, :mi, 1)                #=> 3 (3th)
+    MusicUtils.number(:do, :mi, 1)                #=> 10 (3th)
     MusicUtils.semitones(:do, :mi, 1)             #=> 16 (semi-tones)
     MusicUtils.quality(:do, :mi, 1)               #=> M (major)
 
 Short Notation:
 
-    MusicUtils.short(:do, :mi)                    #=> M2
-    MusicUtils.short(:do, :mi, 1)                 #=> M9
+    MusicUtils.short(:do, :mi)                    #=> M3
+    MusicUtils.short(:do, :mi, 1)                 #=> M10
 
 ### Scales
 
