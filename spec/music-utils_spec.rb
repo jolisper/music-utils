@@ -185,6 +185,50 @@ describe MusicUtils do
       it "2nd note of dd5 from sol should be reff" do
         MusicUtils.second_note(:sol, :dd5).should == :reff
       end
+
+      # From sol
+      it "sol m2" do
+        MusicUtils.second_note(:sol, :m2).should == :laf
+      end
+      it "sol M2" do
+        MusicUtils.second_note(:sol, :M2).should == :la
+      end
+      it "sol m3" do
+        MusicUtils.second_note(:sol, :m3).should == :sif
+      end
+      it "sol M3" do
+        MusicUtils.second_note(:sol, :M3).should == :si
+      end
+      it "sol d4" do
+        MusicUtils.second_note(:sol, :d4).should == :dof
+      end
+      it "sol P4" do
+        MusicUtils.second_note(:sol, :P4).should == :do
+      end
+      it "sol A4" do
+        MusicUtils.second_note(:sol, :A4).should == :dos
+      end
+      it "sol AA4" do
+        MusicUtils.second_note(:sol, :AA4).should == :doss
+      end
+      it "sol dd5" do
+        MusicUtils.second_note(:sol, :dd5).should == :reff
+      end
+      it "sol d5" do
+        MusicUtils.second_note(:sol, :d5).should == :ref
+      end
+      it "sol P5" do
+        MusicUtils.second_note(:sol, :P5).should == :re
+      end
+      it "sol A5" do
+        MusicUtils.second_note(:sol, :A5).should == :res
+      end
+      it "sol AA5" do
+        MusicUtils.second_note(:sol, :AA5).should == :ress
+      end
+      it "sol AA5" do
+        MusicUtils.second_note(:sol, :AA5).should == :ress
+      end
     end
   end
 

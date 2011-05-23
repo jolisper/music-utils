@@ -86,8 +86,6 @@ module MusicUtils
       from_note_index = Scales.cromatic_index(from_note.to_sym)
       to_note_index = from_note_index + intervals
 
-      puts to_note_index
-
       while to_note_index > 11
         to_note_index = to_note_index - 12
       end
