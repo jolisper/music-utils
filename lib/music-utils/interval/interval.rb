@@ -49,20 +49,9 @@ module MusicUtils
       count = count + (12 * @step) if @step > 0
       
       # counting notes alterations
-      case @note1_alt
-        when Scales::FLAT   ; count += 1
-        when Scales::SHARP  ; count -= 1
-        when Scales::DFLAT  ; count += 2
-        when Scales::DSHARP ; count -= 2
-      end
-
-      case @note2_alt
-        when Scales::FLAT   ; count -= 1
-        when Scales::SHARP  ; count += 1
-        when Scales::DFLAT  ; count -= 2
-        when Scales::DSHARP ; count += 2
-      end
-
+      count += Interval.alter_impact_in_semitones(@note1_alt, true)
+      count += Interval.alter_impact_in_semitones(@note2_alt, false)
+  
       count
     end
     
@@ -78,6 +67,47 @@ module MusicUtils
       quality + number.to_s 
     end
   
+    # Returns the second note of an interval
+    # calculates from its first note and number 
+    # and quality in short notation
+    def self.second_note(from, short)
+      quality, number = parse_short(short)
+      
+      while number > 7
+        number = number - 7
+      end
+      
+      from_note, from_alter = Note.parse(from)
+          
+      to_note = Scales.diatonic_scale_from(from_note)[number - 1]
+      intervals = Scales::QUALITIES[number].key(quality)
+      intervals += alter_impact_in_semitones(from_alter, false)
+      
+      from_note_index = Scales.cromatic_index(from_note.to_sym)
+      to_note_index = from_note_index + intervals
+      
+      Scales::CROMATIC_SCALE[to_note_index].select do |note|  
+        raw_note, alter = Note.parse(note)
+        raw_note == to_note
+      end
+      
+    end
+
+    # Short notation parser method
+    def self.parse_short(sn)
+      short = sn.to_s
+    
+      quality = short[0..1]
+      number = short[2..3].to_i
+      if quality == Scales::DFLAT or quality == Scales::DSHARP
+        # nothing to do
+      else
+        quality = short[0]
+        number = short[1..2].to_i
+      end
+      [quality, number]
+    end
+
     private
   
     # Common loop to search note 2 
@@ -110,7 +140,18 @@ module MusicUtils
     def note1_index
       DIATONIC_SCALE.index(@note1)
     end
-    
+
+    def self.alter_impact_in_semitones(alter, from_note)
+      impact = 0
+      case alter
+        when Scales::FLAT   ; impact = from_note ?  1 : -1
+        when Scales::SHARP  ; impact = from_note ? -1 :  1
+        when Scales::DFLAT  ; impact = from_note ?  2 : -2
+        when Scales::DSHARP ; impact = from_note ? -2 :  2
+      end
+      impact
+    end
+
   end
   
 end

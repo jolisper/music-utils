@@ -57,7 +57,18 @@ module Scales
   SIS   = (SI.to_s + SHARP).to_sym
   SISS  = (SI.to_s + DSHARP).to_sym
 
-  CROMATIC_SCALE = [[SIS, DO, REFF], [DOS, REF], [DOSS, RE, MIFF], [RES, MIF, FAFF], [RESS, MI, FAF], [MIS, FA, SOLFF], [MISS, FAS, SOLF], [FASS, SOL, LAFF], [SOLS, LAF], [SOLSS, LA, SIFF], [LAS, SIF], [LASS, SI, DOF]]
+  CROMATIC_SCALE = [[SIS, DO, REFF], 
+                    [SISS, DOS, REF], 
+                    [DOSS, RE, MIFF], 
+                    [RES, MIF, FAFF], 
+                    [RESS, MI, FAF], 
+                    [MIS, FA, SOLFF], 
+                    [MISS, FAS, SOLF], 
+                    [FASS, SOL, LAFF], 
+                    [SOLS, LAF], 
+                    [SOLSS, LA, SIFF], 
+                    [LAS, SIF], 
+                    [LASS, SI, DOF]]
   MAJ_SCALE = [2, 2, 1, 2, 2, 2, 1]
   NATURAL_MIN_SCALE = [2, 1, 2, 2, 1, 2, 2]
   MELODIC_MIN_SCALE = [2, 1, 2, 2, 1, 2, 1]
@@ -86,19 +97,7 @@ module Scales
   def Scales.scale(from, scale_struct)
     from = from.to_sym
     
-    i = 0
-    find_it = false
-    CROMATIC_SCALE.each do |e|
-      if e.is_a?(Array)
-        e.each do |ee|
-          find_it = true if from == ee
-        end
-      else
-        find_it = true if from == e
-      end
-      break if find_it
-      i += 1
-    end
+    i = cromatic_index(from)
     
     scale = []
     scale << from
@@ -147,6 +146,24 @@ module Scales
     end
     diatonic_scale
   end
+
+  # Returns index of the note in the cromatic scale
+  def Scales.cromatic_index(from)
+    i = 0
+    find_it = false
+    CROMATIC_SCALE.each do |e|
+      if e.is_a?(Array)
+        e.each do |ee|
+          find_it = true if from == ee
+        end
+      else
+        find_it = true if from == e
+      end
+      break if find_it
+      i += 1
+    end
+    i
+  end    
 
 end
 end

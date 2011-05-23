@@ -25,6 +25,13 @@ module MusicUtils
     Interval.new(note1, note2, step).short
   end
   
+  # Returns the second note of an interval
+  # calculates from its first note and number 
+  # and quality in short notation
+  def MusicUtils.second_note(from, short)
+    Interval.second_note(from, short)
+  end
+  
   # Returns a scale 
   def MusicUtils.scale(from, scale)
     Scales.scale(from, scale)
