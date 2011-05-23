@@ -166,6 +166,26 @@ describe MusicUtils do
       end
     end
     
+    context "Calculate 2nd note of an interval" do
+      it "2nd note of M3 from do should be mi" do
+        MusicUtils.second_note(:do, :M3).should == :mi
+      end
+      it "2nd note of P4 from res should be sols" do
+        MusicUtils.second_note(:res, :P4).should == :sols
+      end
+      it "2nd note of m6 from fa should be re" do
+        MusicUtils.second_note(:fa, :m6).should == :re
+      end
+      it "2nd note of m7 from mis should be res" do
+        MusicUtils.second_note(:mis, :m7).should == :res
+      end
+      it "2nd note of d5 from sol should be ref" do
+        MusicUtils.second_note(:sol, :d5).should == :ref
+      end
+      it "2nd note of dd5 from sol should be reff" do
+        MusicUtils.second_note(:sol, :dd5).should == :reff
+      end
+    end
   end
 
   context "Scales" do

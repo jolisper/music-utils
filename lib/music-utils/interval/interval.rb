@@ -78,7 +78,7 @@ module MusicUtils
       end
       
       from_note, from_alter = Note.parse(from)
-          
+
       to_note = Scales.diatonic_scale_from(from_note)[number - 1]
       intervals = Scales::QUALITIES[number].key(quality)
       intervals += alter_impact_in_semitones(from_alter, false)
@@ -95,8 +95,7 @@ module MusicUtils
       Scales::CROMATIC_SCALE[to_note_index].select do |note|  
         raw_note, alter = Note.parse(note)
         raw_note == to_note
-      end
-      
+      end.first
     end
 
     # Short notation parser method
@@ -105,7 +104,8 @@ module MusicUtils
     
       quality = short[0..1]
       number = short[2..3].to_i
-      if quality == Scales::DFLAT or quality == Scales::DSHARP
+      
+      if quality == Scales::DIMP or quality == Scales::AUGP
         # nothing to do
       else
         quality = short[0]
