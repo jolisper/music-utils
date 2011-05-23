@@ -66,7 +66,7 @@ module MusicUtils
     def short
       quality + number.to_s 
     end
-  
+
     # Returns the second note of an interval
     # calculates from its first note and number 
     # and quality in short notation
@@ -85,7 +85,13 @@ module MusicUtils
       
       from_note_index = Scales.cromatic_index(from_note.to_sym)
       to_note_index = from_note_index + intervals
-      
+
+      puts to_note_index
+
+      while to_note_index > 11
+        to_note_index = to_note_index - 12
+      end
+
       Scales::CROMATIC_SCALE[to_note_index].select do |note|  
         raw_note, alter = Note.parse(note)
         raw_note == to_note
