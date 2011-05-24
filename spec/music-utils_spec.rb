@@ -166,26 +166,7 @@ describe MusicUtils do
       end
     end
     
-    context "Calculate 2nd note of an interval" do
-      it "2nd note of M3 from do should be mi" do
-        MusicUtils.second_note(:do, :M3).should == :mi
-      end
-      it "2nd note of P4 from res should be sols" do
-        MusicUtils.second_note(:res, :P4).should == :sols
-      end
-      it "2nd note of m6 from fa should be re" do
-        MusicUtils.second_note(:fa, :m6).should == :re
-      end
-      it "2nd note of m7 from mis should be res" do
-        MusicUtils.second_note(:mis, :m7).should == :res
-      end
-      it "2nd note of d5 from sol should be ref" do
-        MusicUtils.second_note(:sol, :d5).should == :ref
-      end
-      it "2nd note of dd5 from sol should be reff" do
-        MusicUtils.second_note(:sol, :dd5).should == :reff
-      end
-
+    context "Calculate 2nd note of an interval from sol" do
       # From sol
       it "sol m2" do
         MusicUtils.second_note(:sol, :m2).should == :laf
@@ -228,6 +209,36 @@ describe MusicUtils do
       end
       it "sol AA5" do
         MusicUtils.second_note(:sol, :AA5).should == :ress
+      end
+      it "sol dd6" do
+        MusicUtils.second_note(:sol, :dd6).should == :miff
+      end
+      it "sol d6" do
+        MusicUtils.second_note(:sol, :d6).should == :mif
+      end
+      it "sol m6" do
+        MusicUtils.second_note(:sol, :m6).should == :mi
+      end
+      it "sol M6" do
+        MusicUtils.second_note(:sol, :M6).should == :mis
+      end
+      it "sol A6" do
+        MusicUtils.second_note(:sol, :A6).should == :miss
+      end
+      it "sol dd7" do
+        MusicUtils.second_note(:sol, :dd7).should == :faff
+      end
+      it "sol d7" do
+        MusicUtils.second_note(:sol, :d7).should == :faf
+      end
+      it "sol m7" do
+        MusicUtils.second_note(:sol, :m7).should == :fa
+      end
+      it "sol M7" do
+        MusicUtils.second_note(:sol, :M7).should == :fas
+      end
+      it "sol A7" do
+        MusicUtils.second_note(:sol, :A7).should == :fass
       end
     end
   end
