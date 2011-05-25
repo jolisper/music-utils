@@ -166,79 +166,142 @@ describe MusicUtils do
       end
     end
     
-    context "Calculate 2nd note of an interval from sol" do
+    context "Calculate higher note of intervals from sol" do
+      it "the higher note of m2 from sol should be laf" do
+        MusicUtils.high_note(:sol, :m2).should == :laf
+      end
+      it "the higher note of M2 from sol should be la" do
+        MusicUtils.high_note(:sol, :M2).should == :la
+      end
+      it "the higher note of m3 from sol should be sif" do
+        MusicUtils.high_note(:sol, :m3).should == :sif
+      end
+      it "the higher note of M3 from sol should be si" do
+        MusicUtils.high_note(:sol, :M3).should == :si
+      end
+      it "the higher note of d4 from sol should be dof" do
+        MusicUtils.high_note(:sol, :d4).should == :dof
+      end
+      it "the higher note of P4 from sol should be do" do
+        MusicUtils.high_note(:sol, :P4).should == :do
+      end
+      it "the higher note of A4 from sol should be dos" do
+        MusicUtils.high_note(:sol, :A4).should == :dos
+      end
+      it "the higher note of AA4 from sol should be doss" do
+        MusicUtils.high_note(:sol, :AA4).should == :doss
+      end
+      it "the higher note of dd5 from sol should be reff" do
+        MusicUtils.high_note(:sol, :dd5).should == :reff
+      end
+      it "the higher note of d5 from sol should be ref" do
+        MusicUtils.high_note(:sol, :d5).should == :ref
+      end
+      it "the higher note of P5 from sol should be re" do
+        MusicUtils.high_note(:sol, :P5).should == :re
+      end
+      it "the higher note of A5 from sol should be res" do
+        MusicUtils.high_note(:sol, :A5).should == :res
+      end
+      it "the higher note of AA5 from sol should be ress" do
+        MusicUtils.high_note(:sol, :AA5).should == :ress
+      end
+      it "the higher note of dd6 from sol should be miff" do
+        MusicUtils.high_note(:sol, :dd6).should == :miff
+      end
+      it "the higher note of d6 from sol should be mif" do
+        MusicUtils.high_note(:sol, :d6).should == :mif
+      end
+      it "the higher note of m6 from sol should be mi" do
+        MusicUtils.high_note(:sol, :m6).should == :mi
+      end
+      it "the higher note of M6 from sol should be mis" do
+        MusicUtils.high_note(:sol, :M6).should == :mis
+      end
+      it "the higher note of A6 from sol should be miss" do
+        MusicUtils.high_note(:sol, :A6).should == :miss
+      end
+      it "the higher note of dd7 from sol should be faff" do
+        MusicUtils.high_note(:sol, :dd7).should == :faff
+      end
+      it "the higher note of d7 from sol should be faf" do
+        MusicUtils.high_note(:sol, :d7).should == :faf
+      end
+      it "the higher note of m7 from sol should be fa" do
+        MusicUtils.high_note(:sol, :m7).should == :fa
+      end
+      it "the higher note of M7 from sol should be fas" do
+        MusicUtils.high_note(:sol, :M7).should == :fas
+      end
+      it "the higher note of A7 from sol should be fass" do
+        MusicUtils.high_note(:sol, :A7).should == :fass
+      end
+    end
+    context "Calculate higher note of intervals from fas" do
       # From sol
-      it "sol m2" do
-        MusicUtils.second_note(:sol, :m2).should == :laf
+      it "the higher note of m2 from fas should be " do
+        MusicUtils.high_note(:fas, :m2).should == :sol
       end
-      it "sol M2" do
-        MusicUtils.second_note(:sol, :M2).should == :la
+      it "the higher note of M2 from fas should be " do
+        MusicUtils.high_note(:fas, :M2).should == :sols
       end
-      it "sol m3" do
-        MusicUtils.second_note(:sol, :m3).should == :sif
+      it "the higher note of m3 from fas should be " do
+        MusicUtils.high_note(:fas, :m3).should == :la
       end
-      it "sol M3" do
-        MusicUtils.second_note(:sol, :M3).should == :si
+      it "the higher note of M3 from fas should be " do
+        MusicUtils.high_note(:fas, :M3).should == :las
       end
-      it "sol d4" do
-        MusicUtils.second_note(:sol, :d4).should == :dof
+      it "the higher note of d4 from fas should be " do
+        MusicUtils.high_note(:fas, :d4).should == :sif
       end
-      it "sol P4" do
-        MusicUtils.second_note(:sol, :P4).should == :do
+      it "the higher note of P4 from fas should be " do
+        MusicUtils.high_note(:fas, :P4).should == :si
       end
-      it "sol A4" do
-        MusicUtils.second_note(:sol, :A4).should == :dos
+      it "the higher note of A4 from fas should be " do
+        MusicUtils.high_note(:fas, :A4).should == :sis
       end
-      it "sol AA4" do
-        MusicUtils.second_note(:sol, :AA4).should == :doss
+      it "the higher note of AA4 from fas should be " do
+        MusicUtils.high_note(:fas, :AA4).should == :siss
       end
-      it "sol dd5" do
-        MusicUtils.second_note(:sol, :dd5).should == :reff
+      it "the higher note of dd5 from fas should be " do
+        MusicUtils.high_note(:fas, :dd5).should == :dof
       end
-      it "sol d5" do
-        MusicUtils.second_note(:sol, :d5).should == :ref
+      it "the higher note of d5 from fas should be " do
+        MusicUtils.high_note(:fas, :d5).should == :do
       end
-      it "sol P5" do
-        MusicUtils.second_note(:sol, :P5).should == :re
+      it "the higher note of P5 from fas should be " do
+        MusicUtils.high_note(:fas, :P5).should == :dos
       end
-      it "sol A5" do
-        MusicUtils.second_note(:sol, :A5).should == :res
+      it "the higher note of A5 from fas should be " do
+        MusicUtils.high_note(:fas, :A5).should == :doss
       end
-      it "sol AA5" do
-        MusicUtils.second_note(:sol, :AA5).should == :ress
+      it "the higher note of dd6 from fas should be " do
+        MusicUtils.high_note(:fas, :dd6).should == :ref
       end
-      it "sol AA5" do
-        MusicUtils.second_note(:sol, :AA5).should == :ress
+      it "the higher note of d6 from fas should be " do
+        MusicUtils.high_note(:fas, :d6).should == :re
       end
-      it "sol dd6" do
-        MusicUtils.second_note(:sol, :dd6).should == :miff
+      it "the higher note of m6 from fas should be " do
+        MusicUtils.high_note(:fas, :m6).should == :res
       end
-      it "sol d6" do
-        MusicUtils.second_note(:sol, :d6).should == :mif
+      it "the higher note of M6 from fas should be " do
+        MusicUtils.high_note(:fas, :M6).should == :ress
       end
-      it "sol m6" do
-        MusicUtils.second_note(:sol, :m6).should == :mi
+      it "the higher note of dd7 from fas should be " do
+        MusicUtils.high_note(:fas, :dd7).should == :miff
       end
-      it "sol M6" do
-        MusicUtils.second_note(:sol, :M6).should == :mis
+      it "the higher note of d7 from fas should be " do
+        MusicUtils.high_note(:fas, :d7).should == :mif
       end
-      it "sol A6" do
-        MusicUtils.second_note(:sol, :A6).should == :miss
+      it "the higher note of m7 from fas should be " do
+        MusicUtils.high_note(:fas, :m7).should == :mi
       end
-      it "sol dd7" do
-        MusicUtils.second_note(:sol, :dd7).should == :faff
+      it "the higher note of M7 from fas should be " do
+        MusicUtils.high_note(:fas, :M7).should == :mis
       end
-      it "sol d7" do
-        MusicUtils.second_note(:sol, :d7).should == :faf
-      end
-      it "sol m7" do
-        MusicUtils.second_note(:sol, :m7).should == :fa
-      end
-      it "sol M7" do
-        MusicUtils.second_note(:sol, :M7).should == :fas
-      end
-      it "sol A7" do
-        MusicUtils.second_note(:sol, :A7).should == :fass
+      it "the higher note of A7 from fas should be " do
+				# comments
+        MusicUtils.high_note(:fas, :A7).should == :miss
       end
     end
   end
