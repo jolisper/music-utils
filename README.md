@@ -35,6 +35,7 @@ Highest note of interval:
 ### Scales
 
 Create scales:
+
     MusicUtils.scale(:fa, MusicUtils::MAJ_SCALE)  #=> [:fa, :sol, :la, :sib, :do, :re, :mi]
 
 
