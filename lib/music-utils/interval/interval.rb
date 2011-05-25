@@ -67,10 +67,10 @@ module MusicUtils
       quality + number.to_s 
     end
 
-    # Returns the second note of an interval
+    # Returns the higher note of an interval
     # calculates from its first note and number 
     # and quality in short notation
-    def self.second_note(from, short)
+    def self.high_note(from, short)
       quality, number = parse_short(short)
       
       while number > 7

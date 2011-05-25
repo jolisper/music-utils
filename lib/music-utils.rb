@@ -28,8 +28,8 @@ module MusicUtils
   # Returns the second note of an interval
   # calculates from its first note and number 
   # and quality in short notation
-  def MusicUtils.second_note(from, short)
-    Interval.second_note(from, short)
+  def MusicUtils.high_note(from, short)
+    Interval.high_note(from, short)
   end
   
   # Returns a scale 
