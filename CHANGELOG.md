@@ -1,3 +1,9 @@
+## 1.2.0 (May 25, 2011)
+
+Features:
+
+  - Added functionality to calculate the highest note of an interval 
+
 ## 1.1.2 (May 21, 2011)
 
 Features:

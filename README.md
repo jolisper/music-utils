@@ -10,7 +10,7 @@ Examples
 ### Intervals
 
 Simples:
-  
+
     MusicUtils.number(:do, :mi)                   #=> 3 (3th)
     MusicUtils.semitones(:do, :mi)                #=> 4 (semi-tones)
     MusicUtils.quality(:do, :mi)                  #=> M (major)
@@ -26,10 +26,15 @@ Short Notation:
     MusicUtils.short(:do, :mi)                    #=> M3
     MusicUtils.short(:do, :mi, 1)                 #=> M10
 
+Highest note of interval:
+
+    MusicUtils.high_note(:do, :P5)                #=> :sol
+    MusicUtils.high_note(:fas, :m3)               #=> :la
+
+
 ### Scales
 
 Create scales:
-
     MusicUtils.scale(:fa, MusicUtils::MAJ_SCALE)  #=> [:fa, :sol, :la, :sib, :do, :re, :mi]
 
 
