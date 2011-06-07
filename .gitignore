@@ -4,8 +4,5 @@
 # build directory
 pkg/
 
-# Gems
-Gemfile.lock
-
 # vim swap files
 *.swp

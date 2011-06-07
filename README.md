@@ -60,7 +60,7 @@ Testing
 
 To run the tests:
 
-    $ rake
+    $ bin/rake
 
 
 To Do
