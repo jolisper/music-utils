@@ -6,3 +6,6 @@ pkg/
 
 # vim swap files
 *.swp
+
+# bundler config
+.bundle/
