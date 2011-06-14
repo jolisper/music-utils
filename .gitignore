@@ -9,3 +9,8 @@ pkg/
 
 # bundler config
 .bundle/
+
+# jedit files
+*.*~
+*.*#
+
