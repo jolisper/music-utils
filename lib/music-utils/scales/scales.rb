@@ -72,6 +72,7 @@ module Scales
   MAJ_SCALE = [2, 2, 1, 2, 2, 2, 1]
   NATURAL_MIN_SCALE = [2, 1, 2, 2, 1, 2, 2]
   MELODIC_MIN_SCALE = [2, 1, 2, 2, 1, 2, 1]
+  PENTATONIC_MAJ = [2, 2, 3, 2]
   
   # Qualities
   PERF = 'P'
