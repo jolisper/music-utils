@@ -14,6 +14,7 @@ module Scales
   SI  = :si
   
   DIATONIC_SCALE = [DO, RE, MI, FA, SOL, LA, SI]
+  DIATONIC_SCALE_AUX = [DO, DO, RE, RE, MI, FA, FA, SOL, SOL, LA, LA, SI]
   
   # Alterations:
   FLAT    = 'f'
@@ -72,7 +73,7 @@ module Scales
   MAJ_SCALE = [2, 2, 1, 2, 2, 2, 1]
   NATURAL_MIN_SCALE = [2, 1, 2, 2, 1, 2, 2]
   MELODIC_MIN_SCALE = [2, 1, 2, 2, 1, 2, 1]
-  PENTATONIC_MAJ = [2, 2, 3, 2]
+  PENTATONIC_MAJ = [2, 2, 3, 2, 3]
   
   # Qualities
   PERF = 'P'
@@ -105,7 +106,8 @@ module Scales
 
     from_note, from_alter = MusicUtils::Note.parse(from)
     
-    diatonic_scale = diatonic_scale_from(from_note)
+    #diatonic_scale = diatonic_scale_from(from_note)
+    diatonic_scale = scale_from(from_note, scale_struct)
     diatonic_scale.delete(from_note)
 
     length = CROMATIC_SCALE.length
@@ -130,22 +132,10 @@ module Scales
 
     scale
   end
-  
-  # Create a diatonic scale starting with the  "from" note
+
+  # Create a diatonic scale starting with the "from" note
   def Scales.diatonic_scale_from(from)
-    diatonic_scale = []
-    length = DIATONIC_SCALE.length
-    i = DIATONIC_SCALE.index(from)
-    c = 0
-    while c < length
-      diatonic_scale << DIATONIC_SCALE[i]
-      i += 1
-      c += 1
-      if i > length - 1
-        i = 0
-      end 
-    end
-    diatonic_scale
+    diatonic_aux_scale_from(from).uniq
   end
 
   # Returns index of the note in the cromatic scale
@@ -166,5 +156,43 @@ module Scales
     i
   end    
 
+  # Create a diatonic scale starting with the "from" note
+  # with notes dups
+  def Scales.diatonic_aux_scale_from(from)
+    diatonic_scale = []
+    length = DIATONIC_SCALE_AUX.length
+    i = DIATONIC_SCALE_AUX.index(from)
+    c = 0
+    while c < length
+      diatonic_scale << DIATONIC_SCALE_AUX[i]
+      i += 1
+      c += 1
+      if i > length - 1
+        i = 0
+      end 
+    end
+    diatonic_scale
+  end
+
+  def Scales.scale_from(from_note, scale_struct)
+    i = 0
+    c = 0
+    scale = []
+    scale << from_note
+    
+    ds = diatonic_aux_scale_from(from_note)
+    
+    while c < scale_struct.size
+      i += scale_struct[c]
+      if scale.last != ds[i]
+        scale << ds[i]  
+      else
+        scale << ds[i + 1]
+      end
+        c += 1
+    end
+    scale
+  end	  
+  
 end
 end

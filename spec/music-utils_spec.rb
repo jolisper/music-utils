@@ -309,25 +309,25 @@ describe MusicUtils do
   context "Scales" do
     context "Major scale" do
       context "Natural notes" do
-        it "the major scale of DO should be [DO, RE, MI, FA, SOL, LA, SI, DO]" do
+        it "the major scale of DO should be [DO, RE, MI, FA, SOL, LA, SI]" do
           MusicUtils.scale(DO, MAJ_SCALE).should == [DO, RE, MI, FA, SOL, LA, SI]
         end
-        it "the major scale of RE should be [RE, MI, FAS, SOL, LA, SI, DOS, RE]" do
+        it "the major scale of RE should be [RE, MI, FAS, SOL, LA, SI, DOS]" do
           MusicUtils.scale(RE, MAJ_SCALE).should == [RE, MI, FAS, SOL, LA, SI, DOS]
         end
-        it "the major scale of MI should be [MI, FAS, SOLS, LA, SI, DOS, RES, MI]" do
+        it "the major scale of MI should be [MI, FAS, SOLS, LA, SI, DOS, RES]" do
           MusicUtils.scale(MI, MAJ_SCALE).should == [MI, FAS, SOLS, LA, SI, DOS, RES]
         end
-        it "the major scale of FA should be [FA, SOL, LA, SIF, DO, RE, MI, FA]" do
+        it "the major scale of FA should be [FA, SOL, LA, SIF, DO, RE, MI]" do
           MusicUtils.scale(FA, MAJ_SCALE).should == [FA, SOL, LA, SIF, DO, RE, MI]
         end
-        it "the major scale of SOL should be [SOL, LA, SI, DO, RE, MI, FAS, SOL]" do
+        it "the major scale of SOL should be [SOL, LA, SI, DO, RE, MI, FAS]" do
           MusicUtils.scale(SOL, MAJ_SCALE).should == [SOL, LA, SI, DO, RE, MI, FAS]
         end
-        it "the major scale of LA should be [LA, SI, DOS, RE, MI, FAS, SOLS, LA]" do
+        it "the major scale of LA should be [LA, SI, DOS, RE, MI, FAS, SOLS]" do
           MusicUtils.scale(LA, MAJ_SCALE).should == [LA, SI, DOS, RE, MI, FAS, SOLS]
         end
-        it "the major scale of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
+        it "the major scale of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS]" do
           MusicUtils.scale(SI, MAJ_SCALE).should == [SI, DOS, RES, MI, FAS, SOLS, LAS]
         end
       end
@@ -449,6 +449,33 @@ describe MusicUtils do
           it "the natural minor scale of SIb should be [SIF, DO, REF, MIF, FA, SOLF, LAF]" do
             MusicUtils.scale(SIF, NATURAL_MIN_SCALE).should == [SIF, DO, REF, MIF, FA, SOLF, LAF]
           end
+        end
+      end
+      context "Pentatonic major" do
+        context "Natural notes" do
+          it "the pentatonic major scale of DO should be [DO, RE, MI, SOL, LA]" do
+            MusicUtils.scale(DO, PENTATONIC_MAJ).should == [DO, RE, MI, SOL, LA]
+          end
+          it "the pentatonic major scale of RE should be [RE, MI, FAS, LA, SI]" do
+            MusicUtils.scale(RE, PENTATONIC_MAJ).should == [RE, MI, FAS, LA, SI]
+          end
+          it "the pentatonic major scale of MI should be [MI, FAS, SOLS, SI, DOS]" do
+            MusicUtils.scale(MI, PENTATONIC_MAJ).should == [MI, FAS, SOLS, SI, DOS]
+          end
+          it "the pentatonic major scale of FA should be [FA, SOL, LA, DO, RE]" do
+            MusicUtils.scale(FA, PENTATONIC_MAJ).should == [FA, SOL, LA, DO, RE]
+          end
+=begin          
+          it "the pentatonic major scale of SOL should be [SOL, LA, SI, DO, RE, MI, FAS, SOL]" do
+            MusicUtils.scale(SOL, PENTATONIC_MAJ).should == [SOL, LA, SI, DO, RE, MI, FAS]
+          end
+          it "the pentatonic major scale of LA should be [LA, SI, DOS, RE, MI, FAS, SOLS, LA]" do
+            MusicUtils.scale(LA, PENTATONIC_MAJ).should == [LA, SI, DOS, RE, MI, FAS, SOLS]
+          end
+          it "the pentatonic major scale of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
+            MusicUtils.scale(SI, PENTATONIC_MAJ).should == [SI, DOS, RES, MI, FAS, SOLS, LAS]
+          end
+=end          
         end
       end
       
