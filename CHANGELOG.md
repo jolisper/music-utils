@@ -1,9 +1,17 @@
+## 1.2.1 (Jun 28, 2011)
+
+Features:
+
+  - Added support to major pentatonic scale and virtually any other scale 
+
+
 ## 1.2.0 (May 25, 2011)
 
 Features:
 
   - Added functionality to calculate the highest note of an interval 
 
+  
 ## 1.1.2 (May 21, 2011)
 
 Features:
