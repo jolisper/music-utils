@@ -465,21 +465,64 @@ describe MusicUtils do
           it "the pentatonic major scale of FA should be [FA, SOL, LA, DO, RE]" do
             MusicUtils.scale(FA, PENTATONIC_MAJ).should == [FA, SOL, LA, DO, RE]
           end
-=begin          
-          it "the pentatonic major scale of SOL should be [SOL, LA, SI, DO, RE, MI, FAS, SOL]" do
-            MusicUtils.scale(SOL, PENTATONIC_MAJ).should == [SOL, LA, SI, DO, RE, MI, FAS]
+          it "the pentatonic major scale of SOL should be [SOL, LA, SI, RE, MI]" do
+            MusicUtils.scale(SOL, PENTATONIC_MAJ).should == [SOL, LA, SI, RE, MI]
           end
-          it "the pentatonic major scale of LA should be [LA, SI, DOS, RE, MI, FAS, SOLS, LA]" do
-            MusicUtils.scale(LA, PENTATONIC_MAJ).should == [LA, SI, DOS, RE, MI, FAS, SOLS]
+          it "the pentatonic major scale of LA should be [LA, SI, DOS, MI, FAS]" do
+            MusicUtils.scale(LA, PENTATONIC_MAJ).should == [LA, SI, DOS, MI, FAS]
           end
-          it "the pentatonic major scale of SI should be [SI, DOS, RES, MI, FAS, SOLS, LAS, SI]" do
-            MusicUtils.scale(SI, PENTATONIC_MAJ).should == [SI, DOS, RES, MI, FAS, SOLS, LAS]
+          it "the pentatonic major scale of SI should be [SI, DOS, RES, FAS, SOLS]" do
+            MusicUtils.scale(SI, PENTATONIC_MAJ).should == [SI, DOS, RES, FAS, SOLS]
           end
-=end          
+        end
+        context "Sharped notes" do
+          it "the major pentatonic of DO# should be  [DOS, RES, MIS, SOLS, LAS]" do
+            MusicUtils.scale(DOS, PENTATONIC_MAJ).should == [DOS, RES, MIS, SOLS, LAS]
+          end
+          it "the major pentatonic of RE# should be [RES, MIS, FASS, LAS, SIS]" do
+            MusicUtils.scale(RES, PENTATONIC_MAJ).should == [RES, MIS, FASS, LAS, SIS]
+          end
+          it "the major pentatonic of MI# should be  [MIS, FASS, SOLSS, SIS, DOSS]" do
+            MusicUtils.scale(MIS, PENTATONIC_MAJ).should == [MIS, FASS, SOLSS, SIS, DOSS]
+          end
+          it "the major pentatonic of FA# should be [FAS, SOLS, LAS, DOS, RES]" do
+            MusicUtils.scale(FAS, PENTATONIC_MAJ).should == [FAS, SOLS, LAS, DOS, RES]
+          end
+          it "the major pentatonic of SOL# should be [SOLS, LAS, SIS, RES, MIS]" do
+            MusicUtils.scale(SOLS, PENTATONIC_MAJ).should == [SOLS, LAS, SIS, RES, MIS]
+          end
+          it "the major pentatonic of LA# should be  [LAS, SIS, DOSS, MIS, FASS]" do
+            MusicUtils.scale(LAS, PENTATONIC_MAJ).should == [LAS, SIS, DOSS, MIS, FASS]
+          end
+          it "the major pentatonic of SI# should be [SIS, DOSS, RESS, FASS, SOLSS]" do
+            MusicUtils.scale(SIS, PENTATONIC_MAJ).should == [SIS, DOSS, RESS, FASS, SOLSS]
+          end
+        end
+        context "Flated notes" do
+          it "the major pentatonic of DOb should be [DOF, REF, MIF, SOLF, LAF]" do
+            MusicUtils.scale(DOF, PENTATONIC_MAJ).should == [DOF, REF, MIF, SOLF, LAF]
+          end
+          it "the major pentatonic of REb should be [REF, MIF, FA, LAF, SIF]" do
+            MusicUtils.scale(REF, PENTATONIC_MAJ).should == [REF, MIF, FA, LAF, SIF]
+          end
+          it "the major pentatonic of MIb should be [MIF, FA, SOL, SIF, DO]" do
+            MusicUtils.scale(MIF, PENTATONIC_MAJ).should == [MIF, FA, SOL, SIF, DO]
+          end
+          it "the major pentatonic of FAb should be  [FAF, SOLF, LAF, DOF, REF]" do
+            MusicUtils.scale(FAF, PENTATONIC_MAJ).should == [FAF, SOLF, LAF, DOF, REF]
+          end
+          it "the major pentatonic of SOLb should be [SOLF, LAF, SIF, REF, MIF]" do
+            MusicUtils.scale(SOLF, PENTATONIC_MAJ).should == [SOLF, LAF, SIF, REF, MIF]
+          end
+          it "the major pentatonic of LAb should be [LAF, SIF, DO, MIF, FA]" do
+            MusicUtils.scale(LAF, PENTATONIC_MAJ).should == [LAF, SIF, DO, MIF, FA]
+          end
+          it "the major pentatonic of SIb should be [SIF, DO, RE, FA, SOL]" do
+            MusicUtils.scale(SIF, PENTATONIC_MAJ).should == [SIF, DO, RE, FA, SOL]
+          end
         end
       end
-      
     end
   end
-
 end
+
