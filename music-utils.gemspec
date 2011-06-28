@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.version       = MusicUtils::VERSION
   s.platform      = Gem::Platform::RUBY
   s.authors       = ["Jorge Luis Pérez"]
-  s.email         = ["jorgeluis700@gmail.com"]
-  s.homepage      = "http://github.com/jorgeluis700/music-utils"
+  s.email         = ["jolisper@gmail.com"]
+  s.homepage      = "http://github.com/jolisper/music-utils"
   s.summary       = %q{Utils for common music tasks.}
   s.description   = %q{Utils to classify music intervals, create scales and more. See README.md and CHANGELOG.md on homepage for more info.}
   s.license       = %q{MIT}

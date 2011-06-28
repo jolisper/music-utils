@@ -1,3 +1,10 @@
+## 1.2.2 (Jun 28, 2011)
+
+Features:
+
+  - Fixed gemspec, update email and homepage
+
+
 ## 1.2.1 (Jun 28, 2011)
 
 Features:
