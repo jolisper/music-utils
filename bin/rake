@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-bundle exec rake $1
+#puts %x( 'bundle exec rake')
+exec "bundle exec rake #{ARGV.join(' ')}"
