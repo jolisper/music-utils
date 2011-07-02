@@ -62,6 +62,10 @@ To run the tests:
 
     $ bin/rake
 
+or:
+
+    $ ruby bin/rake
+
 
 To Do
 -----
