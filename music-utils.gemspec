@@ -25,7 +25,8 @@ Gem::Specification.new do |s|
 
   # Dependencies
   s.add_development_dependency  "rake", ">= 0.8"
-  s.add_development_dependency  "bundler"
+  s.add_development_dependency  "bundler", ">= 1.0.15"
   s.add_development_dependency  "rspec"
-  
+  s.add_development_dependency  "rubygems-test", "~> 0.4"
+ 
 end

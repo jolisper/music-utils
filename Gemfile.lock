@@ -16,12 +16,15 @@ GEM
     rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.6.0)
+    rubygems-test (0.4.3)
+      rake (>= 0.8.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
+  bundler (>= 1.0.15)
   music-utils!
   rake (>= 0.8)
   rspec
+  rubygems-test (~> 0.4)

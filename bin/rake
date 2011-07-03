@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-#puts %x( 'bundle exec rake')
+# Run rake in bundler sandbox, you can add any params
 exec "bundle exec rake #{ARGV.join(' ')}"
