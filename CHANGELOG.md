@@ -1,3 +1,10 @@
+## 1.2.3 (Jul 23, 2012)
+
+Features:
+
+  - Minor changes to make specs compatible with ruby v1.9.3
+
+
 ## 1.2.2 (Jun 28, 2011)
 
 Features:

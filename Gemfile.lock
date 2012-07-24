@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    music-utils (1.2.2)
+    music-utils (1.2.3)
 
 GEM
   remote: http://rubygems.org/

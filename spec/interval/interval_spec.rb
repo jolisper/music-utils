@@ -1,7 +1,7 @@
 require 'music-utils/interval/interval'
+include MusicUtils
 
 describe  MusicUtils::Interval do
-  include MusicUtils
   
   context "Number of intervals" do
     it "the number of simple interval do-mi should be a 3rd" do

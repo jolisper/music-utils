@@ -1,7 +1,7 @@
 require 'music-utils'
+include MusicUtils::Scales
 
 describe MusicUtils do
-  include MusicUtils::Scales
   
   context "Intervals" do
 
